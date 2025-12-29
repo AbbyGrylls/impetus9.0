@@ -12,7 +12,7 @@ export default function TeamPage() {
   const teamsList = teamsData.teams;
   const currentTeam = teamsList[value];
 
-  const handleMobileSelect = (idx) => {
+  const handleMobileSelect = (idx:number) => {
     setValue(idx);
     setMobileSelected(true);
   };
