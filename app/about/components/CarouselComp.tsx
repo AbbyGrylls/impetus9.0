@@ -9,7 +9,7 @@ import { Typography } from "@mui/material";
 export default function CarouselComp() {
   const carousel = useRef(null);
 
-  const handleEnd = ({ index }) => {
+  const handleEnd = ({ index }: { index: number }) => {
     if (index == 8) {
       setTimeout(() => {
         carousel.current?.goTo(0);
