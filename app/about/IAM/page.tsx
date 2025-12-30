@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Typography, useTheme } from "@mui/material";
 import { Box, display } from "@mui/system";
@@ -27,10 +27,8 @@ const aim = [
     des: "Encouraging the adoption of innovative practices to meet the evolving demands of the academic and industrial landscape. By integrating real-world perspectives, participants are empowered to navigate industry changes and drive impactful solutions.",
     img: "holPersp.png",
   },
-
-]
+];
 const speakersNew = [
-
   {
     name: "Dr.Sudeb Datta",
     description: "Technical Director water and gas utilities, M.N. Dastur",
@@ -39,12 +37,12 @@ const speakersNew = [
   {
     name: "Amar Misra",
     description: "Chief Shared Services, Tata Steel",
-    img: "iam/amar.jpeg"
+    img: "iam/amar.jpeg",
   },
   {
     name: "Arkadeb Banerjee",
     description: "Scientist F at DRDO ",
-    img: "iam/arkadeep.jpeg"
+    img: "iam/arkadeep.jpeg",
   },
   {
     name: "Swapan Kumar Mondal",
@@ -55,7 +53,7 @@ const speakersNew = [
     name: "Ramanuj Bhattacharya",
     description: "Joint General Manager, MoD, ‎ Government of India",
     img: "iam/ramanuj.jpeg",
-},
+  },
 
   {
     name: "Sarbajit Rakshit",
@@ -92,12 +90,14 @@ const speakers = [
   },
   {
     name: "Mr. Tatababu Botsa",
-    description: "Deputy General Manager, Garden Reach Shipbuilders & Engineers Ltd.",
+    description:
+      "Deputy General Manager, Garden Reach Shipbuilders & Engineers Ltd.",
     img: "MrTatababu.jpg",
   },
   {
     name: "Mr. Abhijit Paliya",
-    description: "Vice President (Operations)and Plant Head, Lalbaba Engineering Group",
+    description:
+      "Vice President (Operations)and Plant Head, Lalbaba Engineering Group",
     img: "MrAbhijit.jpg",
   },
   {
@@ -211,15 +211,14 @@ export default function IAMPage() {
   const sponsor = {
     sponsor1: { imgname: "IOCL.jpg", link: "https://iocl.com/" },
     sponsor2: { imgname: "lal.jpeg", link: "https://lalbabagroup.com/" },
-  }
+  };
   const sponsorNew = {
     sponsor1: { imgname: "", link: "" },
     sponsor2: { imgname: "", link: "" },
-  }
+  };
   return (
     <section className="bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-.svg')]">
       <CarouselComp />
-
 
       <div className="pt-8 mt-4 px-4 mx-auto max-w-screen-xl text-center  z-10 relative">
         <h1
@@ -232,14 +231,17 @@ export default function IAMPage() {
         >
           INDUSTRY-ACADEMIA MEET
         </h1>
-        <p className=" text-lg font-normal text-gray-400 lg:text-xl sm:px-16 lg:px-48 " style={{
-          fontSize: "1.25rem",
-          // color: "#fff",
-          lineHeight: "1.75rem",
-          fontFamily: "Bebas Neue,sans-serif",
-          letterSpacing: "2px",
-          paddingTop: "0.5rem",
-        }}>
+        <p
+          className=" text-lg font-normal text-gray-400 lg:text-xl sm:px-16 lg:px-48 "
+          style={{
+            fontSize: "1.25rem",
+            // color: "#fff",
+            lineHeight: "1.75rem",
+            fontFamily: "Bebas Neue,sans-serif",
+            letterSpacing: "2px",
+            paddingTop: "0.5rem",
+          }}
+        >
           9th February, 2025 - 9AM to 6PM
           {/* Venue- Institute Hall, IIEST Shibpur. */}
         </p>
@@ -254,12 +256,12 @@ export default function IAMPage() {
           px: 4,
           mx: "auto",
           maxWidth: "1200px",
-          // textAlign: "left", 
+          // textAlign: "left",
           zIndex: 10,
           position: "relative",
         }}
       >
-       {/*  <h1
+        {/*  <h1
           className="text-3xl md:text-4xl py-1 font-bold"
           style={{
             textAlign: "center",
@@ -284,7 +286,10 @@ export default function IAMPage() {
               mb: 2,
             }}
           >
-            <span style={{color:"white"}}>{">>"}Academia meets Industry</span> <span style={{color:"#ff7000"}}>- Insights that matter</span>
+            <span style={{ color: "white" }}>
+              {">>"}Academia meets Industry
+            </span>{" "}
+            <span style={{ color: "#ff7000" }}>- Insights that matter</span>
           </Typography>
           <Typography
             sx={{
@@ -294,18 +299,22 @@ export default function IAMPage() {
               fontFamily: "Roboto",
               letterSpacing: "1px",
               textAlign: "justify",
-              padding:"15px"
+              padding: "15px",
             }}
           >
-            The Industrial Academia Meet in IMPETUS is designed to establish a collaborative platform
-            for meaningful engagement between industry and academia. This initiative emphasizes the exchange
-            of knowledge and innovative ideas, fostering thought-provoking discussions around best practices,
-            employability trends across diverse engineering domains, and strategies to identify and
-            nurture talent during campus recruitment. It also seeks to bridge the gap between academic learning
-            and industrial expectations, ensuring students are equipped with real-world insights and skills.
-            With a lineup of esteemed speakers from leading industries, this event promises to be a
-            treasure trove of wisdom and inspiration. Get ready to meet the visionaries
-            who will ignite your curiosity and redefine your perspective!
+            The Industrial Academia Meet in IMPETUS is designed to establish a
+            collaborative platform for meaningful engagement between industry
+            and academia. This initiative emphasizes the exchange of knowledge
+            and innovative ideas, fostering thought-provoking discussions around
+            best practices, employability trends across diverse engineering
+            domains, and strategies to identify and nurture talent during campus
+            recruitment. It also seeks to bridge the gap between academic
+            learning and industrial expectations, ensuring students are equipped
+            with real-world insights and skills. With a lineup of esteemed
+            speakers from leading industries, this event promises to be a
+            treasure trove of wisdom and inspiration. Get ready to meet the
+            visionaries who will ignite your curiosity and redefine your
+            perspective!
           </Typography>
         </Box>
         <Box>
@@ -316,11 +325,16 @@ export default function IAMPage() {
               fontSize: "2rem",
               fontFamily: "Bebas Neue, sans-serif",
               mb: 2,
-              textAlign: "left"
+              textAlign: "left",
             }}
           >
-            <span style={{color:"white"}}>{">>"}From Innovation to Interaction</span> <span style={{color:"#ff7000"}}> – Dive Deep with Industry Experts</span>
-
+            <span style={{ color: "white" }}>
+              {">>"}From Innovation to Interaction
+            </span>{" "}
+            <span style={{ color: "#ff7000" }}>
+              {" "}
+              – Dive Deep with Industry Experts
+            </span>
           </Typography>
           <Typography
             sx={{
@@ -331,32 +345,40 @@ export default function IAMPage() {
               letterSpacing: "1px",
               textAlign: "left",
               // textAlign: "justify",
-              padding:"15px"
+              padding: "15px",
             }}
           >
-            We are honored to host a distinguished panel of speakers at the Industry-Academia Meet,
-            bringing together leading industry experts and renowned academicians to share their
-            insights, experiences, and expertise.
+            We are honored to host a distinguished panel of speakers at the
+            Industry-Academia Meet, bringing together leading industry experts
+            and renowned academicians to share their insights, experiences, and
+            expertise.
           </Typography>
-          <Typography sx={{
-            color: "#fff",
-            fontSize: "2.5rem",
-            lineHeight: "1.5",
-            textAlign: "center",
-            fontFamily: "Rowdies",
-            paddingTop: "15px",
-            marginTop: "2em"
-          }}>
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: "2.5rem",
+              lineHeight: "1.5",
+              textAlign: "center",
+              fontFamily: "Rowdies",
+              paddingTop: "15px",
+              marginTop: "2em",
+            }}
+          >
             Speakers
           </Typography>
         </Box>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center" style={{ maxWidth: "850px", margin: "0 auto", gap: "100px", marginTop: "-60px" }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center"
+          style={{
+            maxWidth: "850px",
+            margin: "0 auto",
+            gap: "100px",
+            marginTop: "-60px",
+          }}
+        >
           {speakersNew.map((x) => {
             return (
-              <div
-                key={x.name}
-                className="w-full max-w-sm  rounded-lg shadow "
-              >
+              <div key={x.name} className="w-full max-w-sm  rounded-lg shadow ">
                 <div className="flex justify-end px-4 pt-4"></div>
                 <div className="flex flex-col items-center ">
                   <Image
@@ -366,10 +388,16 @@ export default function IAMPage() {
                     width="250"
                     height="250"
                   />
-                  <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white" style={{ marginTop: "16px" }}>
+                  <h5
+                    className="mb-1 text-xl font-medium text-gray-900 dark:text-white"
+                    style={{ marginTop: "16px" }}
+                  >
                     {x.name}
                   </h5>
-                  <span className="text-md  text-center text-gray-400" style={{ width: "80%" }}>
+                  <span
+                    className="text-md  text-center text-gray-400"
+                    style={{ width: "80%" }}
+                  >
                     {x.description}
                   </span>
                 </div>
@@ -377,20 +405,25 @@ export default function IAMPage() {
             );
           })}
         </div>
-        <Box sx={{
-          display: "flex",
+        <Box
+          sx={{
+            display: "flex",
 
-          flexDirection: "column",
-          gap: "50px"
-        }}>
-          <Typography sx={{
-            fontSize: "2rem",
-            fontFamily: "Bebas Neue, sans-serif",
-            mb: 2,
-            textAlign: "left",
-            color:"white"
-          }}>
-            {">>"}Our Aim at <span style={{color:"#02A5EE"}}>IMPETUS 9.0</span>
+            flexDirection: "column",
+            gap: "50px",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "2rem",
+              fontFamily: "Bebas Neue, sans-serif",
+              mb: 2,
+              textAlign: "left",
+              color: "white",
+            }}
+          >
+            {">>"}Our Aim at{" "}
+            <span style={{ color: "#02A5EE" }}>IMPETUS 9.0</span>
           </Typography>
           <Box
             sx={{
@@ -398,9 +431,9 @@ export default function IAMPage() {
               margin: "0 auto",
               marginTop: "-40px",
               display: "flex",
-              flexDirection:{
-                xs:"column",
-                sm:"row"
+              flexDirection: {
+                xs: "column",
+                sm: "row",
               },
               gap: "20px",
               padding: "20px",
@@ -435,13 +468,19 @@ export default function IAMPage() {
                   },
                 }}
               >
-                <Box sx={{ display: "flex", justifyContent: "center",filter:"grayscale(1)",width:"55px" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    filter: "grayscale(1)",
+                    width: "55px",
+                  }}
+                >
                   <Image
                     src={"/images/" + x.img}
                     alt="Icons"
                     width="80"
                     height="80"
-                    
                     style={{ borderRadius: "6px" }}
                   />
                 </Box>
@@ -480,41 +519,55 @@ export default function IAMPage() {
           </Box>
         </Box>
 
-        <Box sx={{
-          display: "flex", flexDirection: {
-            xs: "column",
-            md: "row",
-          },
-          justifyContent: "center",
-          gap: "175px"
-        }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              md: "row",
+            },
+            justifyContent: "center",
+            gap: "175px",
+          }}
+        >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="h2"
+            <Typography
+              variant="h2"
               sx={{
                 fontSize: "2rem",
                 fontFamily: "Bebas Neue, sans-serif",
                 mb: 2,
-                textAlign: "left"
-              }}>
-              {">>"} <span style={{color:"#02A5EE"}}>Takeaways </span><span style={{color: "white",}}>for the corporate</span> 
+                textAlign: "left",
+              }}
+            >
+              {">>"} <span style={{ color: "#02A5EE" }}>Takeaways </span>
+              <span style={{ color: "white" }}>for the corporate</span>
             </Typography>
             <TakeawayTimeline />
           </div>
-          <Box sx={{ display: "flex", flexDirection: "column", marginTop: { xs: "-100px", md: "0px" } }}>
-            <Typography variant="h2"
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: { xs: "-100px", md: "0px" },
+            }}
+          >
+            <Typography
+              variant="h2"
               sx={{
-                
                 fontSize: "2rem",
                 fontFamily: "Bebas Neue, sans-serif",
                 mb: 2,
-                textAlign: "right"
-              }}>
-              <span style={{color:"#02A5EE"}}>Benifits</span> <span style={{color: "white",}}>for the institution {"<<"}</span> 
+                textAlign: "right",
+              }}
+            >
+              <span style={{ color: "#02A5EE" }}>Benifits</span>{" "}
+              <span style={{ color: "white" }}>for the institution {"<<"}</span>
             </Typography>
             <BenifitsTimeline />
           </Box>
         </Box>
-        
+
         <h1
           className="text-3xl md:text-4xl py-1 font-bold"
           style={{
@@ -527,28 +580,41 @@ export default function IAMPage() {
           Past Sponsors
         </h1>
         <Box className="cards" style={{ width: "100%" }}>
-          <SponsorCard sponsor={sponsor.sponsor1} />
-          <SponsorCard sponsor={sponsor.sponsor2} />
+          <SponsorCard sponsor={sponsor.sponsor1} isDimmed={true} />
+          <SponsorCard sponsor={sponsor.sponsor2} isDimmed={false} />
         </Box>
-        <Box sx={{
-          display: "flex",
-          flexDirection: {
-            sm: "column",
-            xs: "column",
-            gap: "75px"
-          },
-        }}>
-          <Typography sx={{
-            color: "#fff",
-            fontSize: "2.5rem",
-            lineHeight: "1.5",
-            textAlign: "center",
-            fontFamily: "Rowdies",
-            paddingTop: "15px",
-          }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {
+              sm: "column",
+              xs: "column",
+              gap: "75px",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: "2.5rem",
+              lineHeight: "1.5",
+              textAlign: "center",
+              fontFamily: "Rowdies",
+              paddingTop: "15px",
+            }}
+          >
             Past Speakers
           </Typography>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center" style={{ maxWidth: "850px", margin: "0 auto", gap: "100px", marginTop: "-60px",marginBottom:"150px" }}>
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center"
+            style={{
+              maxWidth: "850px",
+              margin: "0 auto",
+              gap: "100px",
+              marginTop: "-60px",
+              marginBottom: "150px",
+            }}
+          >
             {speakers.map((x) => {
               return (
                 <div
@@ -564,10 +630,16 @@ export default function IAMPage() {
                       width="250"
                       height="250"
                     />
-                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white" style={{ marginTop: "16px" }}>
+                    <h5
+                      className="mb-1 text-xl font-medium text-gray-900 dark:text-white"
+                      style={{ marginTop: "16px" }}
+                    >
                       {x.name}
                     </h5>
-                    <span className="text-md  text-center text-gray-400" style={{ width: "100%" }}>
+                    <span
+                      className="text-md  text-center text-gray-400"
+                      style={{ width: "100%" }}
+                    >
                       {x.description}
                     </span>
                   </div>

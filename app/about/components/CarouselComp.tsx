@@ -2,29 +2,10 @@
 
 import { Box } from "@mui/system";
 import Image from "next/image";
-import Carousel from "react-elastic-carousel";
-import { useRef } from "react";
-import { Typography } from "@mui/material";
-
-// Define a type for the carousel instance methods you need
-type CarouselRef = {
-  goTo: (index: number) => void;
-  // Add other methods like 'next', 'prev', etc., if you use them
-};
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 export default function CarouselComp() {
-  // Explicitly type the useRef hook
-  const carousel = useRef<CarouselRef | null>(null);
-
-  // Explicitly type the handleEnd function parameter
-  const handleEnd = ({ index }: { index: number }) => {
-    if (index === 8) { // Use '===' for comparison
-      setTimeout(() => {
-        carousel.current?.goTo(0);
-      }, 1000);
-    }
-  };
-
   const urls = [
     "/iam/iam1.jpg",
     "/iam/iam2.jpg",
@@ -32,52 +13,37 @@ export default function CarouselComp() {
     "/iam/iam4.jpg",
     "/iam/iam5.jpg",
     "/iam/iam6.jpg",
-    // "/images/iam/caraousel/img7.jpg",
-    // "/images/iam/caraousel/img8.jpg",
-    // "/images/iam/caraousel/img9.jpg",
   ];
 
-  const styles = {
-    position: "relative",
-    width: "100vw",
-    aspectRatio: {
-      lg: "2/1",
-      md: "1/1",
-      sm: "4/5",
-      xs: "4/5",
-    },
-    maxWidth: "800px",
-    maxHeight: "90vh",
-  };
-
-  const styles2 = {
-    width: "100vw",
-    mt: "120px",
-  };
-
   return (
-    <Box sx={styles2} className="center1">
-      <Carousel
-        ref={carousel}
-        showArrows={false}
-        enableAutoPlay={true}
-        onNextEnd={handleEnd}
-        autoPlaySpeed={3500}
-        enableMouseSwipe={false}
-        pagination={false}
+    <Box sx={{ width: "100vw", mt: "120px" }} className="center1">
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        loop={true}
+        slidesPerView={1}
       >
         {urls.map((url) => (
-          <Box key={url} sx={styles}>
-            <Image
-              src={url}
-              alt="iamIMG"
-              layout="fill"
-              objectFit="cover"
-              key={url}
-            />
-          </Box>
+          <SwiperSlide key={url}>
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "800px",
+                aspectRatio: "16 / 9",
+              }}
+            >
+              <Image
+                src={url}
+                alt="iam image"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </Box>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </Box>
   );
 }

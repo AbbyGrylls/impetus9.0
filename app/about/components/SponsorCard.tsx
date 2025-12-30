@@ -20,7 +20,18 @@ const styles = (dimmed: boolean, isDimmed: any) => ({
   },
 });
 
-const SponsorCard = ({ sponsor, isDimmed }) => {
+interface Sponsor {
+  link: string;
+  imgname: string;
+  altText?: string; // altText is optional
+}
+
+interface SponsorCardProps {
+  sponsor: Sponsor;
+  isDimmed: boolean;
+}
+
+const SponsorCard = ({ sponsor, isDimmed }: SponsorCardProps) => {
   const handleClick = () => {
     if (sponsor.link) {
       window.open(sponsor.link, "_blank");

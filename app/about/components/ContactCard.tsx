@@ -25,7 +25,20 @@ const styles = {
   textAlign: "center",
 };
 
-const ContactCard = ({ person }) => {
+interface Person {
+  name: string;
+  post: string;
+  phone: string;
+  imgname: string;
+  insta: string;
+  link: string;
+}
+
+interface ContactCardProps {
+  person: Person;
+}
+
+const ContactCard = ({ person }: ContactCardProps) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => setHover(true);
@@ -65,7 +78,7 @@ const ContactCard = ({ person }) => {
         className={`text ${hover ? "textHover" : ""}`}
       >
         <a href={person.insta}>
-          <InstagramIcon />
+          <InstagramIcon /> 
         </a>
         <a href={person.link}>
           <LinkedInIcon />
