@@ -16,19 +16,9 @@ export default function CascadingEventsPage() {
   return (
     <div className="bg-black text-white min-h-screen relative">
       <style jsx global>{`
-<<<<<<< HEAD
-        body::-webkit-scrollbar {
-          display: none;
-        }
-        body {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-=======
         body::-webkit-scrollbar { display: none; }
         body { -ms-overflow-style: none; scrollbar-width: none; }
         html { scroll-behavior: smooth; }
->>>>>>> upstream/master
       `}</style>
       <section className="relative z-10 pb-2 border-b border-zinc-900/50">
          <PreEventsCard />
@@ -63,24 +53,20 @@ export default function CascadingEventsPage() {
     </div>
   );
 }
-
 /* ---------------- DAY SECTION ---------------- */
 const DaySection = ({
   dayTitle,
   dayDate,
-
   events,
   isReversed,
 }: {
   dayTitle: string;
-
   dayDate: string;
   events: any[];
   isReversed: boolean;
 }) => {
   const container = useRef<HTMLDivElement>(null);
   const anchorRefs = useRef<(HTMLDivElement | null)[]>([]);
-
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -118,7 +104,6 @@ const DaySection = ({
   };
 
   return (
-
     <div
       ref={container}
       className={`relative min-h-[300vh] ${!isReversed ? "mb-8" : ""}`}
@@ -151,7 +136,6 @@ const DaySection = ({
       <div className="sticky top-4 md:top-20 z-30 flex flex-col items-center pointer-events-none">
         {/* Title Badge */}
         <span className="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full text-sm font-mono uppercase tracking-widest text-white border border-white/10 shadow-lg mb-2">
-
           {dayTitle}
         </span>
 
@@ -171,7 +155,6 @@ const DaySection = ({
           ))}
         </div>
       </div>
-
 
       <div
         className={`flex ${
@@ -198,7 +181,6 @@ const DaySection = ({
         {/* Cards */}
         <div className="w-full md:w-[80%] px-4 md:px-6">
           {events.map((event, i) => {
-
             const targetScale = 1 - (events.length - i) * 0.05;
             return (
               <Card
@@ -217,7 +199,6 @@ const DaySection = ({
   );
 };
 
-
 /* ---------------- TIMELINE ---------------- */
 const Timeline = ({
   progress,
@@ -234,7 +215,6 @@ const Timeline = ({
 }) => {
   const isLeft = side === "left";
 
-
   return (
     <div 
       className={`
@@ -249,7 +229,6 @@ const Timeline = ({
       />
 
       {events.map((event, i) => {
-
         const isActive = i <= activeStep;
         return (
           <motion.button
@@ -278,16 +257,13 @@ const Timeline = ({
               {event.title}
             </span>
           </motion.button>
-
         );
       })}
     </div>
   );
 };
 
-
 /* ---------------- CARD COMPONENT ---------------- */
-
 const Card = ({
   i,
   title,
@@ -299,19 +275,16 @@ const Card = ({
   progress,
   range,
   targetScale,
-
   backendValue,
   teamSize,
   deadline
 }: any) => {
-
   const scale = useTransform(progress, range, [1, targetScale]);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isClosed = new Date() > new Date(deadline);
 
   return (
-
     <>
       {isModalOpen && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
@@ -360,7 +333,6 @@ const Card = ({
                 <div className="mt-4 flex items-center gap-2 text-xs font-mono text-zinc-500 border border-zinc-700 w-fit px-2 py-1 rounded">
                    <span>Team Size: {teamSize.min === teamSize.max ? teamSize.max : `${teamSize.min}-${teamSize.max}`}</span>
                 </div>
-
               </div>
 
               {isClosed ? (
@@ -380,7 +352,6 @@ const Card = ({
               )}
             </div>
 
-
             <div className="relative w-full md:w-[55%] h-[40%] md:h-full overflow-hidden group">
                <div className="absolute inset-0 bg-zinc-900" />
                <img
@@ -394,6 +365,5 @@ const Card = ({
         </motion.div>
       </div>
     </>
-
   );
 };

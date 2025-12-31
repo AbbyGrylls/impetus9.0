@@ -12,6 +12,9 @@ export interface TeamMember {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d56919a1c9b4f8444c8e110da502c754e32f655d
 type Person = {
   name: string;
   post: string;
@@ -22,6 +25,7 @@ type Person = {
 };
 
 const ContactCard = ({ person }: { person: Person }) => {
+<<<<<<< HEAD
 =======
 interface ContactCardProps {
   person: TeamMember;
@@ -29,6 +33,8 @@ interface ContactCardProps {
 
 const ContactCard = ({ person }: ContactCardProps) => {
 >>>>>>> upstream/master
+=======
+>>>>>>> d56919a1c9b4f8444c8e110da502c754e32f655d
   return (
     <div className="group relative w-[240px] bg-zinc-950 border border-zinc-900 overflow-hidden transition-all duration-500 hover:border-white/40">
       

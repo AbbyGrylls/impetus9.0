@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
+=======
+'use client';
+>>>>>>> d56919a1c9b4f8444c8e110da502c754e32f655d
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
