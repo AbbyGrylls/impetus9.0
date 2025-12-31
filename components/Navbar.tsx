@@ -15,7 +15,7 @@ export default function Navbar() {
 
   // Full list for Desktop
   const navLinks = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/about/aboutpage" },
     { name: "Events", href: "/events" },
     { name: "Sponsors", href: "/sponsors" },
     { name: "Teams", href: "/teams" },

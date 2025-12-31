@@ -11,7 +11,6 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import TakeawayTimeline from "../components/TkeawayTimeline";
 import BenifitsTimeline from "../components/BenifitsTimeline";
 
-
 const aim = [
   {
     head: "Interactive Industry-Academia Engagement",
@@ -385,7 +384,7 @@ export default function IAMPage() {
             and renowned academicians to share their insights, experiences, and
             expertise.
           </Typography>
-          <Typography
+          {/* <Typography
             sx={{
               color: "#fff",
               fontSize: "2.5rem",
@@ -397,9 +396,9 @@ export default function IAMPage() {
             }}
           >
             Speakers
-          </Typography>
+          </Typography> */}
         </Box>
-        <div
+        {/* <div
           className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center"
           style={{
             maxWidth: "850px",
@@ -436,7 +435,74 @@ export default function IAMPage() {
               </div>
             );
           })}
-        </div>
+        </div> */}
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {
+              sm: "column",
+              xs: "column",
+              gap: "75px",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: "2.5rem",
+              lineHeight: "1.5",
+              textAlign: "center",
+              fontFamily: "Rowdies",
+              paddingTop: "15px",
+            }}
+          >
+            Past Speakers
+          </Typography>
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center"
+            style={{
+              maxWidth: "850px",
+              margin: "0 auto",
+              gap: "100px",
+              marginTop: "-60px",
+              marginBottom: "150px",
+            }}
+          >
+            {speakers.map((x) => {
+              return (
+                <div
+                  key={x.name}
+                  className="w-full max-w-sm  rounded-lg shadow "
+                >
+                  <div className="flex justify-end px-4 pt-4"></div>
+                  <div className="flex flex-col items-center ">
+                    <Image
+                      className="rounded-full "
+                      src={"/images/" + x.img}
+                      alt="speaker1"
+                      width="250"
+                      height="250"
+                    />
+                    <h5
+                      className="mb-1 text-xl font-medium text-gray-900 dark:text-white"
+                      style={{ marginTop: "16px" }}
+                    >
+                      {x.name}
+                    </h5>
+                    <span
+                      className="text-md  text-center text-gray-400"
+                      style={{ width: "100%" }}
+                    >
+                      {x.description}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -612,72 +678,7 @@ export default function IAMPage() {
           Past Sponsors
         </h1>
         <Box className="cards" style={{ width: "100%" }}>
-          <SponsorCard/>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: {
-              sm: "column",
-              xs: "column",
-              gap: "75px",
-            },
-          }}
-        >
-          <Typography
-            sx={{
-              color: "#fff",
-              fontSize: "2.5rem",
-              lineHeight: "1.5",
-              textAlign: "center",
-              fontFamily: "Rowdies",
-              paddingTop: "15px",
-            }}
-          >
-            Past Speakers
-          </Typography>
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center"
-            style={{
-              maxWidth: "850px",
-              margin: "0 auto",
-              gap: "100px",
-              marginTop: "-60px",
-              marginBottom: "150px",
-            }}
-          >
-            {speakers.map((x) => {
-              return (
-                <div
-                  key={x.name}
-                  className="w-full max-w-sm  rounded-lg shadow "
-                >
-                  <div className="flex justify-end px-4 pt-4"></div>
-                  <div className="flex flex-col items-center ">
-                    <Image
-                      className="rounded-full "
-                      src={"/images/" + x.img}
-                      alt="speaker1"
-                      width="250"
-                      height="250"
-                    />
-                    <h5
-                      className="mb-1 text-xl font-medium text-gray-900 dark:text-white"
-                      style={{ marginTop: "16px" }}
-                    >
-                      {x.name}
-                    </h5>
-                    <span
-                      className="text-md  text-center text-gray-400"
-                      style={{ width: "100%" }}
-                    >
-                      {x.description}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <SponsorCard />
         </Box>
       </Box>
     </section>
