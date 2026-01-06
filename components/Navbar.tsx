@@ -21,7 +21,7 @@ export default function Navbar() {
     { name: "Sponsors", href: "/sponsors" },
     { name: "Teams", href: "/teams" },
     { name: "Gallery", href: "/gallery" },
-    { name: "IAM", href: "/about/IAM" },
+    { name: "IAM", href: "/IAM" },
   ];
 
   // Filter links for the Mobile Bottom Bar (Home, Events, IAM)
