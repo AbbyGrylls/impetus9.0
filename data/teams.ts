@@ -40,18 +40,18 @@ export const teamsData: TeamsData = {
           link: "",
         },
         {
-          name: "Shubhrajyoti",
+          name: "Shubhrajyoti Saha",
           phone: "+91 8918586396",
           post: "Joint Coordinator",
-          imgname: "team/shubrajyoti.jpeg",
-          email: "",
-          link: "",
+          imgname: "teamimages/subrajyoti saha.jpeg",
+          email: "shubhrajyotisaha334@gmail.com",
+          link: "https://www.linkedin.com/in/shubhrajyoti-saha-15952029a",
         },
         {
           name: "Bontha Likith",
           phone: "+91 8074677491",
           post: "Joint Coordinator",
-          imgname: "team/likith.jpeg",
+          imgname: "teamimages/bontha likhith.jpeg",
           email: "",
           link: "",
         }
