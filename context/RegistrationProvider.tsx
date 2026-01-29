@@ -148,7 +148,7 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     };
 
     try {
-      const apiUrl = `${process.env.NEXT_PUBLIC_BACKEND_API || 'http://localhost:5000/api'}/register`;
+      const apiUrl = '/register';
       let response;
 
       if (isInternal) {

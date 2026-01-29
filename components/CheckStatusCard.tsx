@@ -71,7 +71,7 @@ export default function CheckStatusCard() {
     setError("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API || 'http://localhost:5000/api'}/checkstatus`, {
+      const res = await fetch('/api/checkstatus', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

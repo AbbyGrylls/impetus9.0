@@ -96,7 +96,7 @@ export default function CoordsLog() {
     const coordsKey = selectedEventObj ? selectedEventObj.coordsValue : "";
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API || 'http://localhost:5000/api'}/coordinator/download`, {
+      const res = await fetch('/coordinator/download', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
