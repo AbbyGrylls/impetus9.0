@@ -1,8 +1,17 @@
-import React from "react";
+'use client';
+import React,{ useEffect, useState } from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube, ArrowRight, Heart } from "lucide-react";
 
 const Footer = () => {
+  const [vCount, setVCount] = useState<number | string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/count')
+      .then(res => res.json())
+      .then(data => setVCount(data.total))
+      .catch(() => setVCount("----")); // Fallback if API fails
+  }, []);
   return (
     <footer className="relative w-full text-white pt-10 pb-5 bg-[#050505] overflow-hidden">
       
@@ -48,7 +57,14 @@ const Footer = () => {
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
-
+            <div className="mt-8 flex flex-col items-center opacity-40 hover:opacity-80 transition-opacity duration-500">
+              <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-zinc-500 to-transparent mb-2" />
+              <p className="font-mono text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+                Site Visitors: <span className="text-zinc-200">
+                  {typeof vCount === 'number' ? vCount.toLocaleString() : vCount ?? '...'}
+                </span>
+              </p>
+            </div>
             <p className="text-[10px] text-zinc-600 mt-2 md:mt-5 tracking-wide">
                 © 2026 Impetus. All rights reserved.
             </p>

@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientLayout from "./ClientLayout";
 const inter = Inter({ subsets: ["latin"] });
+import { Analytics } from '@vercel/analytics/react';
 const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
@@ -61,6 +62,8 @@ export default function RootLayout({
         <Footer />
         </EraProvider>
         </ClientLayout>
+        
+        <Analytics />
       </body>
     </html>
   );
