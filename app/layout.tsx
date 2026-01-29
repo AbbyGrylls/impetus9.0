@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Orbitron, Montserrat,Inter, Bebas_Neue, Roboto, Rowdies, Nunito } from "next/font/google";
+import { Orbitron, Montserrat, Inter, Bebas_Neue, Roboto, Rowdies, Nunito } from "next/font/google";
 import "./globals.css";
 import { EraProvider } from "../context/EraContext";
 import Navbar from "@/components/Navbar";
@@ -57,10 +57,10 @@ export default function RootLayout({
       <body className={`${orbitron.variable} ${montserrat.variable} ${inter.className} ${bebas.variable} ${roboto.variable} ${rowdies.variable} ${nunito.variable} bg-black text-white antialiased`}>
         <ClientLayout>
           <EraProvider>
-        <Navbar />
-        {children}
-        <Footer />
-        </EraProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </EraProvider>
         </ClientLayout>
         
         <Analytics />

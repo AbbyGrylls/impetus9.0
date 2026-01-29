@@ -6,7 +6,8 @@ import { useEra } from "@/context/EraContext";
 import Loading from "@/components/Loading";
 import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
-import ThemeReveal from "@/components/ThemeReveal"; 
+import ThemeReveal from "@/components/ThemeReveal";
+import LifeInALensReg from "@/components/LifeInALensReg";
 const TARGET_DATE = new Date("2026-02-08T10:00:00");
 const eras = [
   {
@@ -61,7 +62,7 @@ export default function HeroSection() {
     }
   }, []);
 
- 
+
 
   const currentEra = eras[currentEraIndex];
 
@@ -69,14 +70,14 @@ export default function HeroSection() {
     <main className="w-full bg-black text-white">
       <div className="relative w-full h-screen overflow-hidden">
         {/* AnimatePresence ensures the exit animation plays when isLocked becomes false */}
-      <AnimatePresence>
-        {isLocked && (
-          <ThemeReveal 
-            targetDate={TARGET_DATE} 
-            onUnlock={() => setIsLocked(false)} 
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {isLocked && (
+            <ThemeReveal
+              targetDate={TARGET_DATE}
+              onUnlock={() => setIsLocked(false)}
+            />
+          )}
+        </AnimatePresence>
         {/* Background Gradient */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -162,7 +163,9 @@ export default function HeroSection() {
         </div>
       </div>
 
+      <LifeInALensReg />
       <BentoGrid />
+
     </main>
   );
 }
