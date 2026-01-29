@@ -354,11 +354,6 @@ export const StepPayment = () => {
             {/* D. Upload Proof Section (Standard) */}
             <div className="space-y-4 pt-4 border-t border-zinc-800">
                 <div className="space-y-1">
-                    <label className="text-xs uppercase font-bold text-zinc-500">Transaction ID (UTR) <span className="text-red-500">*</span></label>
-                    
-                </div>
-
-                <div className="space-y-1">
                     <label className="text-xs uppercase font-bold text-zinc-500">Payment Screenshot <span className="text-red-500">*</span></label>
                     <div 
                         onClick={() => fileInputRef.current?.click()}
