@@ -148,7 +148,7 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     };
 
     try {
-      const apiUrl = '/register';
+      const apiUrl = '/api/register';
       let response;
 
       if (isInternal) {
