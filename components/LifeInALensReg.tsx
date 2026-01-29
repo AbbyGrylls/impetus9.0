@@ -33,7 +33,7 @@ export default function LifeInALensReg() {
 
                     <div className="flex flex-col items-center mb-6 relative z-10">
                         <a
-                            href="https://forms.gle/YOUR_GOOGLE_FORM_LINK"
+                            href="https://forms.gle/pR1LvJ51rmznauym7"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Upload your story"
@@ -169,7 +169,7 @@ export default function LifeInALensReg() {
                         {/* Action Button */}
                         <div className="flex-none">
                             <a
-                                href="https://forms.gle/YOUR_GOOGLE_FORM_LINK"
+                                href="https://forms.gle/pR1LvJ51rmznauym7"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="
