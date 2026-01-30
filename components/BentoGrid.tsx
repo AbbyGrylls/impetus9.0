@@ -56,7 +56,7 @@ export default function BentoGrid() {
                <div className="md:col-span-1 md:row-span-1 row-span-4 relative group overflow-hidden rounded-3xl border border-zinc-800 p-6 flex flex-col justify-between">
                   <div className="absolute inset-0 flex items-start justify-center md:pt-2 pt-1 opacity-100 ">
                      <img
-                        src="/SME.png"
+                        src="/SMEwhite.png"
                         alt="SME Logo"
                         className="md:w-52 md:h-52 w-55 h-55 "
                      />
@@ -104,7 +104,7 @@ export default function BentoGrid() {
                      className="w-full max-w-[240px] py-4 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:shadow-[0_0_30px_rgba(234,179,8,0.6)] group px-14"
                   >
                      <span className="text-[15px] font-black italic tracking-tight uppercase whitespace-nowrap">
-                        Want to Sponsor?
+                        Collaborate with us
                      </span>
                      <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" strokeWidth={3} />
                   </a>

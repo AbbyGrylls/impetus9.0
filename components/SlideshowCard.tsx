@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, PlayCircle } from 'lucide-react';
-
+import Link from "next/link"
 export default function SlideshowCard() {
    const slideshowImages = [
       "/home/impetus8/cad.webp",
@@ -40,6 +40,7 @@ export default function SlideshowCard() {
          </div>
          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <Link href="/gallery">
             <div>
                <h3 className="font-nunito text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">
                   IMPETUS 8.0
@@ -48,6 +49,7 @@ export default function SlideshowCard() {
                   A look back at our past success.
                </p>
             </div>
+            </Link>
 
             <a
                href="YOUR_YOUTUBE_LINK_HERE"

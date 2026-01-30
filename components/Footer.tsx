@@ -33,7 +33,7 @@ const Footer = () => {
                 IMPETUS 9.0
               </h2>
               <p className="text-xs text-gray-500 tracking-widest uppercase mt-2 font-medium">
-                IIEST Shibpur • Dept of Mechanical Engineering
+                IIEST Shibpur • Department of Mechanical Engineering
               </p>
             </div>
 

@@ -43,7 +43,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Impetus 9.0 | {%$theme$%}",
+  title: "Impetus 9.0",
   description: "Annual Technical Fest of the Department of Mechanical Engineering, IIEST Shibpur",
 };
 

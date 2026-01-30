@@ -180,7 +180,7 @@ export const eventsData = {
         teamSize: { min: 1, max: 2 },
         deadline: "2026-02-12T23:59:00",
         prizepool:"40k",
-        coordinators:["Ayush Dutta (8972851567)","Bontha Likith (8074677491)"],
+        coordinators:["Ayush Dutta (8972851567)","Bontha Likhith (8074677491)"],
         rulebook:"https://docs.google.com/document/d/1Z3CeUfFkVz5dsk4oRuMcPg8mlkFmjOou/edit?rtpof=true"
       },
       {
