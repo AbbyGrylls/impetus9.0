@@ -7,7 +7,7 @@ import Loading from "@/components/Loading";
 import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
 import ThemeReveal from "@/components/ThemeReveal";
-import LifeInALensReg from "@/components/LifeInALensReg";
+import AlertBanner from "@/components/AlertBanner"
 const TARGET_DATE = new Date("2026-02-08T10:00:00");
 const eras = [
   {
@@ -140,7 +140,7 @@ export default function HeroSection() {
             </p>
           </motion.div>
         </div>
-
+        <AlertBanner />
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce pointer-events-none">
           <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">
@@ -162,8 +162,6 @@ export default function HeroSection() {
           </svg>
         </div>
       </div>
-
-      <LifeInALensReg />
       <BentoGrid />
 
     </main>

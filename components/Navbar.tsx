@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Bell, ChevronLeft } from "lucide-react";
 import { useEra } from "@/context/EraContext";
 
 export default function Navbar() {
@@ -40,14 +41,15 @@ export default function Navbar() {
     { name: "Teams", href: "/teams" },
     { name: "Gallery", href: "/gallery" },
     { name: "IAM", href: "/IAM" },
+    {name:"Alerts", href:"/feed"}
   ];
 
   const mobileBottomTabs = navLinks.filter((link) =>
-    ["Home", "Events", "IAM"].includes(link.name)
+    ["Home", "Events","Alerts", "IAM"].includes(link.name)
   );
   
   const mobileDropdownLinks = navLinks.filter((link) =>
-    !["Home", "Events", "IAM"].includes(link.name)
+    !["Home", "Events","Alerts", "IAM"].includes(link.name)
   );
 
   return (
@@ -181,6 +183,7 @@ export default function Navbar() {
           >
             {link.name === "Home" && <HomeIcon />}
             {link.name === "Events" && <EventsIcon />}
+            {link.name==="Alerts" && <Bell />}
             {link.name === "IAM" && <IamIcon />}
 
             <span className="text-[10px] uppercase tracking-wider font-semibold">

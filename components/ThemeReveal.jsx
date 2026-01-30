@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import AlertBanner from "./AlertBanner";
 // --- Timer Digit Component ---
 const TimerBlock = ({ value, label }) => (
   <div className="flex flex-col items-center mx-2 md:mx-6 relative z-10 group">
@@ -150,7 +150,7 @@ export default function ThemeReveal({ targetDate, onUnlock }) {
           <div className="text-4xl md:text-7xl text-neutral-700 font-mono mt-2 animate-pulse">:</div>
           <TimerBlock value={remainingTime.seconds} label="Secs" />
         </div>
-
+        <AlertBanner />
         {/* Footer Status */}
         
       </div>
