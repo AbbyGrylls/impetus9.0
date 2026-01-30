@@ -8,7 +8,7 @@ export default function AlertBanner() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.3 }}
+      transition={{ delay: 0.1, duration: 0.3 }}
       className="mt-6 text-center px-4 md:px-0"
     >
       <Link
