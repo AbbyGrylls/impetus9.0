@@ -65,7 +65,7 @@ const sponsors = [
   { name: "iic", logo: iic },
   //{ name: "jsw", logo: jsw },
   { name: "mcpro", logo: mcpro },
-  { name: "thinkagain", logo: thinkagain },
+  { name: "thinkagain", logo: thinkagain },   
 ];
 
 export default function PastSponsors() {

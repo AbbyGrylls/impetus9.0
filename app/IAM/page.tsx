@@ -323,7 +323,7 @@ export default function IAMPage() {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: center;  
               }
               .aim-card:hover {
                 transform: translateY(-5px);
