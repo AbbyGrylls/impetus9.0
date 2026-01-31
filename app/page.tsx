@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useEra } from "@/context/EraContext";
 import Loading from "@/components/Loading";
 import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
-
+import ThemeReveal from "@/components/ThemeReveal";
+import AlertBanner from "@/components/AlertBanner"
+const TARGET_DATE = new Date("2026-02-08T10:00:00");
 const eras = [
   {
     id: "mechanism",
@@ -43,9 +45,9 @@ const eras = [
 ];
 
 export default function HeroSection() {
-  const [currentEraIndex, setCurrentEraIndex] = useState(0);
+  const { currentEraIndex, setCurrentEraIndex } = useEra();
   const [showSplash, setShowSplash] = useState(true);
-
+  const [isLocked, setIsLocked] = useState(() => new Date() < TARGET_DATE);
   /* Splash Screen Logic */
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisitedImpetus");
@@ -60,23 +62,22 @@ export default function HeroSection() {
     }
   }, []);
 
-  /* Era Auto-Rotation */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentEraIndex((prev) => (prev + 1) % eras.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
-  if (showSplash) {
-    return <Loading />;
-  }
 
   const currentEra = eras[currentEraIndex];
 
   return (
     <main className="w-full bg-black text-white">
       <div className="relative w-full h-screen overflow-hidden">
+        {/* AnimatePresence ensures the exit animation plays when isLocked becomes false */}
+        <AnimatePresence>
+          {isLocked && (
+            <ThemeReveal
+              targetDate={TARGET_DATE}
+              onUnlock={() => setIsLocked(false)}
+            />
+          )}
+        </AnimatePresence>
         {/* Background Gradient */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -139,7 +140,7 @@ export default function HeroSection() {
             </p>
           </motion.div>
         </div>
-
+        <AlertBanner />
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce pointer-events-none">
           <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">
@@ -161,8 +162,8 @@ export default function HeroSection() {
           </svg>
         </div>
       </div>
-
       <BentoGrid />
+
     </main>
   );
 }
