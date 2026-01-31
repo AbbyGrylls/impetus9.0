@@ -1,8 +1,17 @@
-import React from "react";
+'use client';
+import React,{ useEffect, useState } from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube, ArrowRight, Heart } from "lucide-react";
 
 const Footer = () => {
+  const [vCount, setVCount] = useState<number | string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/count')
+      .then(res => res.json())
+      .then(data => setVCount(data.total))
+      .catch(() => setVCount("----")); // Fallback if API fails
+  }, []);
   return (
     <footer className="relative w-full text-white pt-10 pb-5 bg-[#050505] overflow-hidden">
       
@@ -24,7 +33,7 @@ const Footer = () => {
                 IMPETUS 9.0
               </h2>
               <p className="text-xs text-gray-500 tracking-widest uppercase mt-2 font-medium">
-                IIEST Shibpur • Dept of Mechanical Engineering
+                IIEST Shibpur • Department of Mechanical Engineering
               </p>
             </div>
 
@@ -43,12 +52,19 @@ const Footer = () => {
               className="group relative px-8 py-4 rounded-full bg-white/5 border border-white/10 overflow-hidden transition-all hover:border-blue-500/50 hover:bg-blue-900/10 shadow-lg"
             >
               <div className="absolute inset-0 w-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 group-hover:w-full group-hover:animate-shine" />
-              <div className="flex items-center gap-3 text-base font-medium text-gray-300 group-hover:text-white">
+              <div className="font-orbitron flex items-center gap-3 text-base font-medium text-gray-300 group-hover:text-white">
                 <span>Meet the Team</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
-
+            <div className="mt-8 flex flex-col items-center opacity-40 hover:opacity-80 transition-opacity duration-500">
+              <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-zinc-500 to-transparent mb-2" />
+              <p className="font-mono text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+                Site Visitors: <span className="text-zinc-200">
+                  {typeof vCount === 'number' ? vCount.toLocaleString() : vCount ?? '...'}
+                </span>
+              </p>
+            </div>
             <p className="text-[10px] text-zinc-600 mt-2 md:mt-5 tracking-wide">
                 © 2026 Impetus. All rights reserved.
             </p>
@@ -61,11 +77,11 @@ const Footer = () => {
 
           {/* 3. COORDINATORS BLOCK */}
           <div className="flex flex-col items-center md:items-end space-y-3 mb-0 md:mb-7 order-2 md:order-3 w-full md:w-auto">
-             <h3 className="text-xs font-bold tracking-widest text-blue-500 uppercase mb-2">
+             <h3 className="font-orbitron text-xs font-bold tracking-widest text-blue-500 uppercase mb-2">
                 Main Coordinators
              </h3>
              {/* Container for the two lines */}
-             <div className="w-full max-w-[300px] md:max-w-none space-y-2 md:space-y-3 px-2">
+             <div className="font-montserrat w-full max-w-[300px] md:max-w-none space-y-2 md:space-y-3 px-2">
                 <CoordinatorRow name="Akshat Gupta" phone="+91 7548071485" />
                 <CoordinatorRow name="Akash S" phone="+91 9444265824" />
              </div>

@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
+/* 1. DEFINE VARIABLES */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Custom Impetus Colors */
+  --impetus-orange: #FF4500;
+  --impetus-bronze: #CD7F32;
+  --impetus-cyan: #00FFFF;
+  --impetus-deep: #0B3D91;
 }
 
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 2. TAILWIND THEME CONFIG (v4 syntax) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,29 +28,82 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Default fallback */
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  
+  /* REPLACEMENT FOR 'antialiased' */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.font-display {
+
+/* 4. MANUAL FONT CLASSES 
+   These connect the Next.js font loaders (var(--font-name)) 
+   to standard CSS classes. Using these works 100% of the time.
+*/
+.font-orbitron {
   font-family: var(--font-orbitron), sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.font-bebas {
+  font-family: var(--font-bebas), sans-serif;
+}
+
+.font-roboto {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+.font-rowdies {
+  font-family: var(--font-rowdies), sans-serif;
+}
+
+.font-nunito {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+/* Aliases used in your project */
+.font-display {
+  font-family: var(--font-bebas), sans-serif; /* Mapped to Bebas as per your config */
   letter-spacing: 0.14em;
 }
 
 .font-body {
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-family: var(--font-roboto), sans-serif; /* Mapped to Roboto */
 }
 
+/* 5. MANUAL COLOR UTILITIES */
+.text-impetus-orange { color: var(--impetus-orange); }
+.bg-impetus-orange   { background-color: var(--impetus-orange); }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.text-impetus-bronze { color: var(--impetus-bronze); }
+.bg-impetus-bronze   { background-color: var(--impetus-bronze); }
+
+.text-impetus-cyan   { color: var(--impetus-cyan); }
+.bg-impetus-cyan     { background-color: var(--impetus-cyan); }
+
+.text-impetus-deep   { color: var(--impetus-deep); }
+.bg-impetus-deep     { background-color: var(--impetus-deep); }
+
+
+/* 6. UTILITIES & ANIMATIONS */
 @layer utilities {
-  /* 1. The Color Cycle Animation (Border & Glow) */
+  
+  /* The slow spin for your Glowing Navbar Trail */
+  @keyframes spin-slow-custom {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow-custom 12s linear infinite;
+  }
+
+  /* Color Cycle Animation */
   @keyframes hue-cycle {
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
@@ -43,7 +112,7 @@ body {
     animation: hue-cycle 10s infinite linear;
   }
 
-  /* 2. The Text Glitch Animation */
+  /* Text Glitch Animation */
   @keyframes glitch-skew {
     0% { transform: skew(0deg); }
     20% { transform: skew(-2deg); }

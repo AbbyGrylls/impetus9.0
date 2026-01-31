@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { Search, ShieldCheck, User, Users, ChevronDown, X, Phone, Hash, Copy, CheckCircle } from "lucide-react";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 // --- DATA SOURCE ---
@@ -43,10 +43,7 @@ export default function CheckStatusCard() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [resultData, setResultData] = useState<any>(null);
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   
-  // 1. Create a Ref for the Captcha
-  const captchaRef = useRef<HCaptcha>(null);
 
   // Lock Body Scroll
   useEffect(() => {
@@ -61,31 +58,26 @@ export default function CheckStatusCard() {
   const handleClose = () => {
     setFormData(initialFormState);
     setResultData(null);
-    setCaptchaToken(null);
     setError("");
     
-    // 2. FORCE RESET the visual widget
-    if (captchaRef.current) {
-        captchaRef.current.resetCaptcha();
-    }
+    
   };
 
   const handleSubmit = async () => {
     if (!formData.eventName) { setError("Please select an event."); return; }
-    if (!formData.searchValue || !captchaToken) { setError("Please fill all fields and captcha."); return; }
+    if (!formData.searchValue ) { setError("Please fill all fields"); return; }
     
     setLoading(true);
     setError("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API || 'http://localhost:5000/api'}/checkstatus`, {
+      const res = await fetch('/api/checkstatus', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           eventName: formData.eventName,
           searchField: formData.searchField,
           searchValue: formData.searchValue,
-          captchaToken,
           deviceFingerprint: "fingerprint_skipped_for_search"
         })
       });
@@ -96,9 +88,6 @@ export default function CheckStatusCard() {
       setResultData(json.data); 
     } catch (err: any) {
       setError(err.message);
-      setCaptchaToken(null);
-      // Reset captcha on error too
-      if (captchaRef.current) captchaRef.current.resetCaptcha();
     } finally {
       setLoading(false);
     }
@@ -147,11 +136,7 @@ export default function CheckStatusCard() {
             </div>
 
             <div className="flex justify-center scale-90 origin-center pt-1">
-                <HCaptcha 
-                    ref={captchaRef} // 3. Attach Ref Here
-                    sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || ""} 
-                    onVerify={(t) => setCaptchaToken(t)} theme="dark" 
-                />
+                
             </div>
 
             {error && <div className="text-red-500 text-sm bg-red-500/10 p-2 rounded-lg border border-red-500/20 text-center animate-pulse">{error}</div>}

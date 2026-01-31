@@ -16,20 +16,20 @@ import mahr from "./images/mahr.png";
 import dastur from "./images/dastur.webp";
 import imperial from "./images/imperial.webp";
 import unacademy from "./images/unacademy.png";
-import tatasteel from "./images/tatasteel.png";
-import ibm from "./images/ibm.png";
+//import tatasteel from "./images/tatasteel.png";
+//import ibm from "./images/ibm.png";
 import indianoil from "./images/indianoil.png";
 import spices from "./images/7Spices.png";
 import alobus from "./images/Alo bus.png";
 import aswawa from "./images/Asawa insulation.png";
-import bancharam from "./images/Bancharam.png";
+//import bancharam from "./images/Bancharam.png";
 import blackbird from "./images/BLACKBIRDROBOTIX.png";
-import haldiram from "./images/Haldirams.png";
-import hero from "./images/Hero motocorp.webp";
-import hyundai from "./images/Hyundai.png";
+//import haldiram from "./images/Haldirams.png";
+//import hero from "./images/Hero motocorp.webp";
+//import hyundai from "./images/Hyundai.png";
 import idp from "./images/idp.jpg";
 import iic from "./images/iic.jpg";
-import jsw from "./images/JSW-steel.png";
+//import jsw from "./images/JSW-steel.png";
 import mcpro from "./images/McPro.png";
 import thinkagain from "./images/ThinkAgainLab.jpg";
 
@@ -50,20 +50,20 @@ const sponsors = [
   { name: "Dastur", logo: dastur },
   { name: "Imperial", logo: imperial },
   { name: "Unacademy", logo: unacademy },
-  { name: "Tata Steel", logo: tatasteel },
-  { name: "IBM", logo: ibm },
+  //{ name: "Tata Steel", logo: tatasteel },
+  //{ name: "IBM", logo: ibm },
   { name: "Indian Oil", logo: indianoil },
   { name: "spices", logo: spices },
   { name: "alobus", logo: alobus },
   { name: "aswawa", logo: aswawa },
-  { name: "bancharam", logo: bancharam },
+  //{ name: "bancharam", logo: bancharam },
   // { name: "blackbird", logo: blackbird },
-  { name: "haldiram", logo: haldiram },
-  { name: "hero", logo: hero },
-  { name: "hyundai", logo: hyundai },
+  //{ name: "haldiram", logo: haldiram },
+  //{ name: "hero", logo: hero },
+  //{ name: "hyundai", logo: hyundai },
   { name: "idp", logo: idp },
   { name: "iic", logo: iic },
-  { name: "jsw", logo: jsw },
+  //{ name: "jsw", logo: jsw },
   { name: "mcpro", logo: mcpro },
   { name: "thinkagain", logo: thinkagain },
 ];
@@ -71,15 +71,6 @@ const sponsors = [
 export default function PastSponsors() {
   return (
     <div className="relative z-10 mx-auto max-w-7xl px-6">
-      {/* Header */}
-      <div className="mb-16 text-center">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">
-          Our <span className="text-cyan-400">Past Sponsors</span>
-        </h2>
-        <p className="mt-4 text-gray-300">
-          Trusted by leading brands across previous editions of IMPETUS
-        </p>
-      </div>
 
       {/* Logo Grid */}
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
