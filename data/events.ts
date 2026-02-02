@@ -99,7 +99,7 @@ export const eventsData = {
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
         prizepool:"8k",
-        coordinators:["Jitendra Kumar","Shubhankar Ghosh (9883080373)"],
+        coordinators:["Jitendra Kumar (6300651164)","Shubhankar Ghosh (9883080373)"],
         rulebook:"https://drive.google.com/drive/folders/1zWKtyxiivzYcm2Il1VSJ0Ndo-Dd6Cfif"
       },
       {
@@ -114,7 +114,7 @@ export const eventsData = {
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
         prizepool:"8k",
-        coordinators:["Sudheshna Hazra (7583980171)","Avishek Pal ("],
+        coordinators:["Sudheshna Hazra (7583980171)","Avishek Pal (9832061992)"],
         rulebook:"https://docs.google.com/document/d/1J-iglj7Nrc3UmcpIUt3DQ4GnX88CHFRw/edit#heading=h.6l1oeuz5t97r"
       }
     ]
@@ -150,7 +150,7 @@ export const eventsData = {
         teamSize: { min: 1, max: 2 },
         deadline: "2026-02-12T23:59:00",
         prizepool:"8k",
-        coordinators:["Pranay Dey","Ayush Dutta (8972851567)"],
+        coordinators:["Pranay Dey (7864875402)","Ayush Dutta (8972851567)"],
         rulebook:"https://docs.google.com/document/d/12RHMaaITQwxB21wDuYBsosyZKaWUFxHT/edit?rtpof=true&tab=t.0"
       },
       {
@@ -183,7 +183,7 @@ export const eventsData = {
         coordinators:["Ayush Dutta (8972851567)","Bontha Likhith (8074677491)"],
         rulebook:"https://docs.google.com/document/d/1Z3CeUfFkVz5dsk4oRuMcPg8mlkFmjOou/edit?rtpof=true"
       },
-      {
+      /* {
         title: "CONTROL CRAFT",
         backendValue: "Control Craft",
         coordsValue:"CONTROLCRAFT",
@@ -197,7 +197,7 @@ export const eventsData = {
         prizepool:"8k",
         coordinators:["Soumyaditya Mandal (7797754924)","Prakar Mishra (8910137219)"],
         rulebook:"https://docs.google.com/document/d/1WCDlxY1dQ3jDqZFQdNxYGNoHyFqZmlix/edit"
-      }
+      } */
     ]
   }
 };

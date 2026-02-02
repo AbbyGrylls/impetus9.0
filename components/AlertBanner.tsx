@@ -31,7 +31,7 @@ export default function AlertBanner() {
         <span className="flex items-center gap-2">
           <span className="opacity-70">→</span>
           <span className="underline underline-offset-4">
-            Visit Alerts
+            View Alerts
           </span>
         </span>
       </Link>
