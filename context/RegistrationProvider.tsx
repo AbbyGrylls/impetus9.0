@@ -22,22 +22,25 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
   const [captain, setCaptain] = useState({ name: "", phone: "", roll: "" });
   
   // --- 1. CONFIG UPDATES ---
-  // We determine max members based on team size
   const maxMembers = event.teamSize.max - 1; 
   const minMembers = Math.max(0, event.teamSize.min - 1);
   
+  // *** NEW: Get Fee Amount ***
+  const amount = event.ExtFee || 0;
+
   const [members, setMembers] = useState(
     Array.from({ length: maxMembers }).map(() => ({ name: "", phone: "", roll: "" }))
   );
 
-  // --- 2. NEW PAYMENT STATE ---
   const [paymentFile, setPaymentFile] = useState<File | null>(null);
 
-  // Calculate Total Steps: Captain (1) + Members + Payment (1 if external)
-  // Logic: Steps are 0-indexed. 
-  // Internal: 0 (Cap) -> 1..N (Members). Total = 1 + N.
-  // External: 0 (Cap) -> 1..N (Members) -> N+1 (Payment). Total = 1 + N + 1.
-  const totalSteps = 1 + maxMembers + (isInternal ? 0 : 1);
+  // *** UPDATED: LOGIC FOR PAYMENT REQUIREMENT ***
+  // Payment is needed ONLY if: It is External AND The fee is greater than 0
+  const needsPayment = !isInternal && amount > 0;
+
+  // *** UPDATED: Total Steps Calculation ***
+  // If needsPayment is false, we do not add the extra step.
+  const totalSteps = 1 + maxMembers + (needsPayment ? 1 : 0);
 
   useEffect(() => {
     const setFp = async () => {
@@ -77,8 +80,9 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
       return null;
     }
 
-    // Step: Payment (Only for External users, happens at the last step)
-    const isPaymentStep = !isInternal && currentStep === (totalSteps - 1);
+    // *** UPDATED: Payment Validation ***
+    // We strictly check if needsPayment is true before validating the file
+    const isPaymentStep = needsPayment && currentStep === (totalSteps - 1);
     
     if (isPaymentStep) {
         if (!paymentFile) return "Please upload the payment screenshot.";
@@ -118,11 +122,10 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     setStep((prev) => prev - 1);
   };
 
-  // --- API SUBMISSION (REFACTORED) ---
+  // --- API SUBMISSION ---
   const handleSubmit = async () => {
     const error = validateStep(step);
     if (error) { setErrorMsg(error); return; }
-    
 
     setIsLoading(true);
     setErrorMsg("");
@@ -162,7 +165,6 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
         // --- EXTERNAL: SEND FORMDATA (MULTIPART) ---
         const formData = new FormData();
         
-        // Append all text fields
         formData.append("eventName", basePayload.eventName);
         formData.append("teamName", basePayload.teamName);
         formData.append("capName", basePayload.capName);
@@ -170,16 +172,15 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
         formData.append("participantType", "EXTERNAL");
         formData.append("deviceFingerprint", basePayload.deviceFingerprint);
         
-        // Append JSON strings for complex objects
         formData.append("teamMembers", JSON.stringify(validMembers));
         
-        if (paymentFile) {
+        // *** UPDATED: Only append file if payment was actually needed and file exists ***
+        if (needsPayment && paymentFile) {
             formData.append("paymentScreenshot", paymentFile);
         }
 
         response = await fetch(apiUrl, {
           method: "POST",
-          // Note: Content-Type header is NOT set manually for FormData; browser sets it with boundary
           body: formData,
         });
       }
@@ -189,7 +190,6 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
         throw new Error(data.error || data.message || "Server Error"); 
       }
       
-      // For External, receiptId might be "PENDING" or similar, handle as needed
       setReceiptId(data.receiptId || "PENDING");
       setIsSuccess(true);
       
@@ -201,7 +201,7 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     }
   };
 
-  // --- PDF GENERATION (Preserved, slightly robust for external) ---
+  // --- PDF GENERATION ---
   const downloadReceipt = () => {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
@@ -225,9 +225,14 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     doc.setTextColor(0, 0, 0);
     doc.setFont("courier", "bold");
     doc.setFontSize(14);
-    // If it's external and pending, show a different label
-    const displayId = (!isInternal && receiptId === "PENDING") ? "VERIFICATION PENDING" : receiptId;
-    doc.text(`Receipt ID: ${displayId}`, 20, 60);
+    
+    // *** UPDATED: Show different status if free external event ***
+    let statusText = receiptId;
+    if (!isInternal && receiptId === "PENDING") {
+        statusText = needsPayment ? "VERIFICATION PENDING" : "CONFIRMED";
+    }
+
+    doc.text(`Receipt ID: ${statusText}`, 20, 60);
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(12);
@@ -271,11 +276,10 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     <RegistrationContext.Provider value={{
       step, totalSteps, isInternal, isLoading, isSuccess, receiptId, errorMsg, setErrorMsg,
       teamName, captain, members, event, minMembers,
-       paymentFile, setPaymentFile,
+      paymentFile, setPaymentFile,
 
       toggleInternal: () => {
         setIsInternal(!isInternal);
-        // Reset step if toggling to avoid "stuck on payment step" issues if switching back to Internal
         setStep(0); 
       },
       setTeamName, updateCaptain, updateMember,
