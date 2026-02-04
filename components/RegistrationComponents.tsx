@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { X, ChevronRight, ChevronLeft, Download, CheckCircle, AlertCircle, Users,Clock,QrCode,Smartphone,Upload } from "lucide-react";
+import { X, ChevronRight, ChevronLeft, Download, CheckCircle, AlertCircle, Users, Clock, QrCode, Smartphone, Upload } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRegistrationContext } from "../context/RegistrationContext";
 
@@ -51,9 +51,9 @@ export const ErrorNotification = () => {
 
 // --- UPDATED SUCCESS VIEW ---
 export const SuccessView = () => {
-    const { 
-        teamName, event, receiptId, downloadReceipt, 
-        closeForm, isInternal 
+    const {
+        teamName, event, receiptId, downloadReceipt,
+        closeForm, isInternal
     } = useRegistrationContext();
 
     // 1. EXTERNAL USER SUCCESS VIEW (Pending Verification)
@@ -69,11 +69,11 @@ export const SuccessView = () => {
 
                 <div className="bg-zinc-950 p-4 rounded-lg border border-zinc-800 mb-6 text-left space-y-2">
                     <p className="text-sm text-zinc-300">
-                        <CheckCircle size={14} className="inline mr-2 text-green-500"/>
+                        <CheckCircle size={14} className="inline mr-2 text-green-500" />
                         Details Received
                     </p>
                     <p className="text-sm text-zinc-300">
-                        <CheckCircle size={14} className="inline mr-2 text-green-500"/>
+                        <CheckCircle size={14} className="inline mr-2 text-green-500" />
                         Payment Proof Uploaded
                     </p>
                     <div className="h-px bg-zinc-800 my-2" />
@@ -108,7 +108,7 @@ export const SuccessView = () => {
                 <p className="text-xs text-zinc-500 uppercase tracking-widest mb-1">Receipt ID</p>
                 <p className="text-xl font-mono text-yellow-500">{receiptId}</p>
             </div>
-            
+
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -129,7 +129,7 @@ export const SuccessView = () => {
 export const FormHeader = () => {
     // 1. Add handlePrev to the context destructuring
     const { event, isInternal, toggleInternal, step, totalSteps, teamName, closeForm, members, handlePrev } = useRegistrationContext();
-    
+
     const filledCount = 1 + members.filter((m: any) => m.name.trim().length > 0).length;
     const isTeamValid = filledCount >= event.teamSize.min && filledCount <= event.teamSize.max;
 
@@ -139,7 +139,7 @@ export const FormHeader = () => {
                 <div className="flex items-start gap-3">
                     {/* --- NEW LOCATION: BACK BUTTON --- */}
                     {step > 0 && (
-                        <button 
+                        <button
                             onClick={handlePrev}
                             className="mt-1 p-1 -ml-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
                             aria-label="Go Back"
@@ -178,7 +178,7 @@ export const FormHeader = () => {
                     <button onClick={closeForm} className="text-zinc-500 hover:text-white mt-1"><X size={24} /></button>
                 </div>
             </div>
-            
+
             {/* PROGRESS BAR */}
             <div className="flex gap-1 h-1 w-full">
                 {Array.from({ length: totalSteps }).map((_, i) => (
@@ -274,8 +274,8 @@ export const FormFooter = () => {
             {/* RIGHT SIDE: ONLY NEXT/SUBMIT BUTTON */}
             <div className="mr-2">
                 {step < totalSteps - 1 ? (
-                    <button 
-                        onClick={handleNext} 
+                    <button
+                        onClick={handleNext}
                         className="flex items-center gap-2 px-8 py-3 bg-white text-black rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg shadow-white/10"
                     >
                         Next <ChevronRight size={18} />
@@ -296,10 +296,10 @@ export const FormFooter = () => {
     );
 };
 export const StepPayment = () => {
-    const { 
-        event, 
-        paymentFile, 
-        setPaymentFile 
+    const {
+        event,
+        paymentFile,
+        setPaymentFile
     } = useRegistrationContext();
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -316,59 +316,52 @@ export const StepPayment = () => {
     return (
         <div className="space-y-6">
             <div className="bg-zinc-950 p-6 rounded-xl border border-zinc-800 text-center space-y-4">
-                
+
                 {/* Amount Header */}
                 <div>
                     <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">Registration Fee</p>
                     <h3 className="text-3xl font-mono text-yellow-500 font-bold">₹{amount}</h3>
                 </div>
-                
+
                 {/* Universal QR Image */}
                 <div className="relative mx-auto bg-white p-2 rounded-xl w-52 h-52 flex items-center justify-center shadow-2xl shadow-black/50 overflow-hidden">
-                   {/* We use an img tag pointing to the Google Drive URL */}
-                   <img 
-                       src={"/pre_events.jpg"} 
-                       alt="Payment QR" 
-                       className="w-full h-full object-contain"
-                       // Add a key to force reload if amount changes (optional but good practice)
-                       key={amount} 
-                   />
-                </div>
-                
-                {/* Smart Button */}
-                <div className="space-y-3">
-                    <p className="text-[10px] text-zinc-500 uppercase tracking-wider">
-                        Paying via Mobile?
-                    </p>
-                    <a 
-                        href={upiLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center justify-center gap-2 w-full bg-yellow-500 hover:bg-yellow-400 text-black py-3 rounded-full text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-yellow-500/20"
-                    >
-                        <Smartphone size={18} /> 
-                        Tap to Pay ₹{amount}
-                    </a>
+                    {/* We use an img tag pointing to the Google Drive URL */}
+                    <img
+                        src={"/pre_events.jpg"}
+                        alt="Payment QR"
+                        className="w-full h-full object-contain"
+                        // Add a key to force reload if amount changes (optional but good practice)
+                        key={amount}
+                    />
                 </div>
             </div>
             {/* D. Upload Proof Section (Standard) */}
             <div className="space-y-4 pt-4 border-t border-zinc-800">
                 <div className="space-y-1">
-                    <label className="text-xs uppercase font-bold text-zinc-500">Payment Screenshot <span className="text-red-500">*</span></label>
-                    <div 
+                    <div className="flex flex-col sm:flex-row sm:items-end gap-2">
+                        <label className="text-xs uppercase font-bold text-zinc-500 shrink-0">
+                            Payment Screenshot <span className="text-red-500">*</span>
+                        </label>
+
+                        {/* The Disclaimer (Bracketed Style) */}
+                        <span className="text-[10px] sm:text-[11px] text-yellow-500 font-medium bg-yellow-500/10 px-2 py-0.5 rounded border border-yellow-500/20">
+                            Image must show Reference ID / UTR No. for quick verification
+                        </span>
+                    </div>
+                    <div
                         onClick={() => fileInputRef.current?.click()}
                         className={`border-2 border-dashed rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer transition-colors ${paymentFile ? "border-green-500/50 bg-green-900/10" : "border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800"}`}
                     >
-                        <input 
-                            type="file" 
-                            accept="image/*" 
-                            ref={fileInputRef} 
-                            className="hidden" 
+                        <input
+                            type="file"
+                            accept="image/*"
+                            ref={fileInputRef}
+                            className="hidden"
                             onChange={(e) => {
                                 if (e.target.files && e.target.files[0]) {
                                     setPaymentFile(e.target.files[0]);
                                 }
-                            }} 
+                            }}
                         />
                         {paymentFile ? (
                             <div className="text-center">
