@@ -147,7 +147,7 @@ export const eventsData = {
         date: "Feb 13",
         time: "01:00 PM",
         color: "#171717",
-        teamSize: { min: 1, max: 2 },
+        teamSize: { min: 2, max: 3 },
         deadline: "2026-02-12T23:59:00",
         prizepool:"8k",
         coordinators:["Pranay Dey (7864875402)","Ayush Dutta (8972851567)"],
