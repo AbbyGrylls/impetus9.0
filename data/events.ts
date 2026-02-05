@@ -45,6 +45,7 @@ export const eventsData = {
         src: "/events/posterPG.jpg",
         date: "NA",
         time: "NA",
+        ExtFee: 200,
         color: "#141414",
         teamSize: { min: 1, max: 1 },
         deadline: "2026-02-11T23:59:00",
@@ -68,6 +69,7 @@ export const eventsData = {
         color: "#1a1a1a",
         teamSize: { min: 2, max: 4 }, 
         deadline: "2026-02-11T23:59:00",
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Ayush Dutta (8972851567)","Mansi Mehra (9368550521)"],
         rulebook:"https://docs.google.com/document/d/1OodHk_IKRBqI3oAwfPnMR2uQHVW8RZoC/edit"
@@ -83,6 +85,7 @@ export const eventsData = {
         color: "#171717",
         teamSize: { min: 1, max: 1 }, 
         deadline: "2026-02-11T23:59:00",
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Bikram Pal (6296991941)","Agniva Hazra (9749424075)"],
         rulebook:"https://docs.google.com/document/d/1NEzUHBHEtcsrFd-XYl53OT9gEuJiEQf3/edit?usp=drive_web&ouid=109625681489688709828&rtpof=true"
@@ -98,6 +101,7 @@ export const eventsData = {
         color: "#141414",
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Jitendra Kumar (6300651164)","Shubhankar Ghosh (9883080373)"],
         rulebook:"https://drive.google.com/drive/folders/1zWKtyxiivzYcm2Il1VSJ0Ndo-Dd6Cfif"
@@ -111,6 +115,7 @@ export const eventsData = {
         date: "NA",
         time: "NA",
         color: "#0f0f0f",
+        ExtFee: 200,
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
         prizepool:"8k",
@@ -134,6 +139,7 @@ export const eventsData = {
         color: "#1a1a1a",
         teamSize: { min: 5, max: 5 },
         deadline: "2026-02-12T23:59:00",
+        ExtFee: 200,
         prizepool:"10k",
         coordinators:["Shiva Kumar (9390480217)","Aman Wankhede (7448171318)"],
         rulebook:"https://docs.google.com/document/d/1RTxp3ur6SOXH-x23uiAoalO2ZzmpdpzF/edit?rtpof=true"
@@ -148,6 +154,7 @@ export const eventsData = {
         time: "11:00 AM",
         color: "#171717",
         teamSize: { min: 2, max: 3 },
+        ExtFee: 200,
         deadline: "2026-02-12T23:59:00",
         prizepool:"8k",
         coordinators:["Pranay Dey (7864875402)","Ayush Dutta (8972851567)"],
@@ -164,6 +171,7 @@ export const eventsData = {
         color: "#141414",
         teamSize: { min: 2, max: 4 },
         deadline: "2026-02-12T23:59:00",
+        ExtFee: 200,
         prizepool:"10k",
         coordinators:["Rohan Vikas Kudturkar (9321234034)","Swayam Gupta (7985873384) "],
         rulebook:"https://docs.google.com/document/d/1vnuBAW8poSmPbbzMvjV2009DwGr8WrN_/edit?rtpof=true"
