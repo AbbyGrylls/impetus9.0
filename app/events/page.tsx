@@ -271,7 +271,8 @@ const Card = ({
   deadline,
   coordinators,
   rulebook,
-  prizepool
+  prizepool,
+  ExtFee
 }: { coordinators: string[] } & any) => {
   const scale = useTransform(progress, range, [1, targetScale]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -281,7 +282,7 @@ const Card = ({
       {isModalOpen && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
           <EventRegistrationForm
-            event={{ title, backendValue, teamSize }}
+            event={{ title, backendValue, teamSize, ExtFee: ExtFee || 0 }}
             onClose={() => setIsModalOpen(false)}
           />
         </div>,
