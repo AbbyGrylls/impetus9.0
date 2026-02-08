@@ -15,7 +15,7 @@ export const eventsData = {
         time: "02:00 PM",
         color: "#1a1a1a",
         teamSize: { min: 4, max: 5 }, 
-        deadline: "2026-02-11T23:59:00",
+        deadline: "2026-02-01T23:59:00",
         ExtFee: 200,
         prizepool:"2k",
         coordinators: ["Shiva Kumar (9390480217)","Pranay Dey (7864875402)"],
