@@ -8,7 +8,7 @@ import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
 import ThemeReveal from "@/components/ThemeReveal";
 import AlertBanner from "@/components/AlertBanner"
-const TARGET_DATE = new Date("2026-02-08T10:00:00");
+const TARGET_DATE = new Date("2026-02-08T16:30:00");
 const eras = [
   {
     id: "mechanism",
