@@ -122,7 +122,7 @@ export default function HeroSection() {
             </h1>
 
             <h3 className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mt-2 text-white/70">
-              Chronicles of Innovation
+              Momentum in Motion
             </h3>
 
             <div className="flex items-center gap-3 mt-3 text-xs md:text-sm tracking-wider text-white/80">
