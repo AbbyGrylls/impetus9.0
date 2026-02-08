@@ -12,7 +12,7 @@ export default function TeamPage() {
   const teamsList = teamsData.teams;
   const currentTeam = teamsList[value];
 
-  const handleMobileSelect = (idx:number) => {
+  const handleMobileSelect = (idx: number) => {
     setValue(idx);
     setMobileSelected(true);
   };
@@ -30,24 +30,24 @@ export default function TeamPage() {
       m.post.toLowerCase() !== "coordinator"
   );
   const [isUnlocked, setIsUnlocked] = useState(false);
-    const handleUnlock = () => {
-      setIsUnlocked(true);
-      sessionStorage.setItem("events_page_unlocked", "true");
-      alert("Developer Mode: Unlocked"); // Optional feedback
-    };
-    if (!isUnlocked) {
-      return (
-        <UnderConstruction 
-          title="Work under progress"
-          subtitle="Almost ready! Check back soon"
-          progress={75} 
-          onSecretUnlock={handleUnlock} // Pass the function here
-        />
-      );
-    }
+  const handleUnlock = () => {
+    setIsUnlocked(true);
+    sessionStorage.setItem("events_page_unlocked", "true");
+    alert("Developer Mode: Unlocked"); // Optional feedback
+  };
+  if (!isUnlocked) {
+    return (
+      <UnderConstruction
+        title="Work under progress"
+        subtitle="Almost ready! Check back soon"
+        progress={75}
+        onSecretUnlock={handleUnlock} // Pass the function here
+      />
+    );
+  }
   return (
     <div className="bg-black min-h-screen pb-32">
-      
+
       {/* =========================================
           DESKTOP HEADER (Hidden on Mobile) 
       ========================================= */}
@@ -100,11 +100,11 @@ export default function TeamPage() {
       {/* =========================================
           MOBILE HEADER / SELECTION LOGIC 
       ========================================= */}
-      
+
       {/* 1. Mobile Initial Selection Screen */}
       <AnimatePresence>
         {!mobileSelected && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -50 }}
@@ -113,7 +113,7 @@ export default function TeamPage() {
             <h2 className="text-xl font-bold text-zinc-100 uppercase tracking-widest mb-8 text-center">
               Choose Team
             </h2>
-            
+
             <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
               {teamsList.map((team, idx) => (
                 <button
@@ -149,13 +149,13 @@ export default function TeamPage() {
               className="fixed top-0 left-0 right-0 z-4 bg-black/90 backdrop-blur-md border-b border-zinc-800 pt-20 pb-4"
             >
               <div className="relative w-full flex justify-center items-center">
-                
+
                 {/* VISUAL LAYER: Clean text + Arrow (No Pill/Border) */}
                 <div className="flex items-center gap-2">
                   <span className="text-zinc-100 text-xs uppercase tracking-[0.15em] font-bold">
                     {teamsList[value].teamName}
                   </span>
-                  
+
                   {/* Yellow Arrow Immediately Next to Text */}
                   <svg className="w-4 h-4 text-yellow-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -178,7 +178,7 @@ export default function TeamPage() {
                     </option>
                   ))}
                 </select>
-                
+
               </div>
             </motion.div>
           )}
@@ -197,7 +197,7 @@ export default function TeamPage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             // Padding top to clear the taller sticky header
-            className="pt-44 md:pt-0" 
+            className="pt-44 md:pt-0"
           >
             {/* SECTION 1: HEADS */}
             <div className="flex flex-wrap justify-center gap-16 mb-24">

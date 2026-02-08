@@ -35,7 +35,7 @@ export const teamsData: TeamsData = {
           name: "Akash",
           phone: "+91 9444265824",
           post: "Coordinator",
-          imgname: "team/akashS.jpeg",
+          imgname: "teamimages/akashS.jpeg",
           email: "",
           link: "",
         },
@@ -73,7 +73,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 8291164387",
           post: "Lead",
-          imgname: "team/ritesGupta.jpeg",
+          imgname: "teamimages/ritesGupta.jpeg",
           email: "",
           link: "",
         }
@@ -101,11 +101,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Nabadisha Chattopadhyay",
-          phone: "",
+          phone: "8597048449",
           post: "Lead",
           imgname: "",
-          email: "",
-          link: ""
+          email: "chattopadhyaynabadisha@gmail.com",
+          link: "https://www.linkedin.com/in/nabadisha-chattopadhyay-a83a6325a"
         },
         {
           name: "Diptayan Mondal ",
@@ -117,11 +117,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Diethozo jabez Vizo",
-          phone: "",
+          phone: "8787805856",
           post: "Lead",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamimages/Vizo.jpg",
+          email: "diethozojabezvizo@gmail.com",
+          link: "http://www.linkedin.com/in/diethozo-vizo"
         },
         {
           name: "Shivansh Kumar",
@@ -145,17 +145,17 @@ export const teamsData: TeamsData = {
           post: "Lead",
           imgname: "teamimages/DEBOLINA.jpg",
           email: "2022meb029.debolina@students.iiests.ac.in",
-          link: ""
+          link: "https://www.linkedin.com/in/debolina-das-a22715240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
           name: "Sreejani Mukherjee",
           phone: "7044442412",
           post: "Lead",
-          imgname: "Sreejani.jpg",
+          imgname: "teamimages/Sreejani.jpg",
           email: "2022meb008.sreejani@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/sreejani-mukherjee-01539a2b8"
         }
-        
+
 
       ]
     },
@@ -167,7 +167,7 @@ export const teamsData: TeamsData = {
           name: "Abhishek Kumar (absie)",
           phone: "+91 9959387572",
           post: "Lead",
-          imgname: "team/abhishek.jpg",
+          imgname: "teamimages/abhishek.jpg",
           email: "",
           link: ""
         }
@@ -191,18 +191,50 @@ export const teamsData: TeamsData = {
       teamName: "Publicity Team",
       slug: "publicity",
       members: [
+        {
+          name: "Abhishek Bhatt",
+          phone: "6395399362",
+          post: "",
+          imgname: "teamimages/Abhishek Bhatt.JPG",
+          email: "abhibhatt6601@gmail.com",
+          link: "https://www.linkedin.com/in/abhishek-bhatt-306b28259/"
+        },
       ]
     },
     {
       teamName: "Sponsorship Team",
       slug: "sponsorship",
       members: [
+        {
+          name: "Ritesh Premchand Gupta",
+          phone: "+91 8291164387",
+          post: "Lead",
+          imgname: "teamimages/ritesGupta.jpeg",
+          email: "",
+          link: "",
+        },
+        {
+          name: "Amit Kumar",
+          phone: "+91 7859048392",
+          post: "Lead",
+          imgname: "teamimages/",
+          email: "2022meb065.amit@students.iiests.ac.in",
+          link: "https://www.linkedin.com/in/amitkumar9082?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        }
       ]
     },
     {
       teamName: "Travel & Logistics Team",
       slug: "logistics",
       members: [
+        {
+          name: "Sourish",
+          phone: "+91 7063722098",
+          post: "Lead",
+          imgname: "teamimages/",
+          email: "sourishpal100@gmail.com",
+          link: "https://www.linkedin.com/in/sourish-pal-077508255",
+        }
       ]
     },
     {
