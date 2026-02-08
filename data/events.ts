@@ -59,7 +59,7 @@ export const eventsData = {
     date: "Feb 12",
     events: [
       {
-        title: "MECHANICAL TRIATHLON",
+        title: "MECHATHLON",
         backendValue: "Mechanical Triathlon",
         coordsValue:"MECHANICAL",
         description: "An individual, multi-round mechanical engineering challenge assessing observation, construction, and precision skills. Participants first undergo an eliminatory visual dimension estimation round, followed by a catapult-building task using limited materials, and conclude with an accuracy-based launching test using the same catapult.",
