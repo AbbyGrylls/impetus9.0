@@ -24,37 +24,37 @@ const aim = [
 ];
 
 const speakers = [
-  // {
-  //   name: "Dr.Sudeb Datta",
-  //   description: "Technical Director water and gas utilities, M.N. Dastur",
-  //   img: "sudebDutta.jpeg",
-  // },
-  // {
-  //   name: "Amar Misra",
-  //   description: "Chief Shared Services, Tata Steel",
-  //   img: "amar.jpeg",
-  // },
-  // {
-  //   name: "Arkadeb Banerjee",
-  //   description: "Scientist F at DRDO ",
-  //   img: "arkadeep.jpeg",
-  // },
-  // {
-  //   name: "Swapan Kumar Mondal",
-  //   description: "Top Educator at Unacademy",
-  //   img: "skMondal.jpeg",
-  // },
-  // {
-  //   name: "Ramanuj Bhattacharya",
-  //   description: "Joint General Manager, MoD, Government of India",
-  //   img: "ramanuj.jpeg",
-  // },
+  {
+    name: "Dr.Sudeb Datta",
+    description: "Technical Director water and gas utilities, M.N. Dastur",
+    img: "sudebDutta.jpeg",
+  },
+  {
+    name: "Amar Misra",
+    description: "Chief Shared Services, Tata Steel",
+    img: "amar.jpeg",
+  },
+  {
+    name: "Arkadeb Banerjee",
+    description: "Scientist F at DRDO ",
+    img: "arkadeep.jpeg",
+  },
+  {
+    name: "Swapan Kumar Mondal",
+    description: "Top Educator at Unacademy",
+    img: "skMondal.jpeg",
+  },
+  {
+    name: "Ramanuj Bhattacharya",
+    description: "Joint General Manager, MoD, Government of India",
+    img: "ramanuj.jpeg",
+  },
 
-  // {
-  //   name: "Sarbajit Rakshit",
-  //   description: "Master Innovator At IBM",
-  //   img: "rakshit.jpeg",
-  // },
+  {
+    name: "Sarbajit Rakshit",
+    description: "Master Innovator At IBM",
+    img: "rakshit.jpeg",
+  },
    {
     name: "Debajyoti Dhar",     
     description: "Deputy Director, Space Application Center, Ahmedabad (ISRO)",
@@ -72,11 +72,11 @@ const speakers = [
     description: "Director, PWC",
     img: "Threee.jpeg",
   },
-  /*{
+  {
     name: "Dr.Sudeb Datta",
     description: "Technical Director water and gas utilities, M.N. Dastur",
     img: "fourrrr.jpeg",
-  }, */
+  }, 
   {
     name: "Mr. Tatababu Botsa",
     description:
@@ -89,11 +89,11 @@ const speakers = [
       "Vice President (Operations)and Plant Head, Lalbaba Engineering Group",
     img: "MrAbhijit.jpg",
   },
-  /*{
+  {
     name: "Mr. Sambhu Prasad Adak",
     description: "Partner, Purahsara Strategist LLP",
     img: "MrSambhu.jpeg",
-  },*/
+  },
   {
     name: "Mr. Deepayan Das",
     description: "Managing Director, Mahr Metrology Pvt Ltd",
