@@ -51,7 +51,7 @@ export const eventsData = {
         deadline: "2026-02-11T23:59:00",
         prizepool:"3k",
         coordinators:["Ayush Dutta (8972851567)","Anshuman Mondal (9064662805)"],
-        rulebook:"https://docs.google.com/document/d/1xGcYjoA6Ld-Eu6A3_RaO7jhuuSaWua6U/edit#heading=h.vos4j9dhnkvm"
+        rulebook:"https://docs.google.com/document/d/1N5scOv7tHyPRgMlNn44Q0Ex5e-JkWPZy/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       }]
   },
   day1: {
@@ -88,7 +88,7 @@ export const eventsData = {
         ExtFee: 200,
         prizepool:"8k",
         coordinators:["Bikram Pal (6296991941)","Agniva Hazra (9749424075)"],
-        rulebook:"https://docs.google.com/document/d/1NEzUHBHEtcsrFd-XYl53OT9gEuJiEQf3/edit?usp=drive_web&ouid=109625681489688709828&rtpof=true"
+        rulebook:"https://docs.google.com/document/d/1aHmnu-JOAS416g3PJ3VRwMtuoKK3O69T/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       },
       {
         title: "SCRAPYARD",
@@ -104,7 +104,7 @@ export const eventsData = {
         ExtFee: 200,
         prizepool:"8k",
         coordinators:["Jitendra Kumar (6300651164)","Shubhankar Ghosh (9883080373)"],
-        rulebook:"https://drive.google.com/drive/folders/1zWKtyxiivzYcm2Il1VSJ0Ndo-Dd6Cfif"
+        rulebook:"https://docs.google.com/document/d/1wzVtboklkyMNVV7_50I2p8V1OsUmPtXs/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       },
       {
         title: "YANTRASEARCH",
