@@ -185,6 +185,7 @@ export const eventsData = {
         date: "NA",
         time: "NA",
         color: "#0f0f0f",
+        ExtFee: 500,
         teamSize: { min: 1, max: 2 },
         deadline: "2026-02-12T23:59:00",
         prizepool:"40k",
