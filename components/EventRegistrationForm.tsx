@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { RegistrationProvider } from "../context/RegistrationProvider"; 
 import { useRegistrationContext } from "../context/RegistrationContext";
-import { FormHeader, FormFooter, SuccessView, StepCaptain, StepMember, ErrorNotification, StepPayment } from "./RegistrationComponents"; // Adjust imports
+import { StepIdentity,FormHeader, FormFooter, SuccessView, StepCaptain, StepMember, ErrorNotification, StepPayment } from "./RegistrationComponents"; // Adjust imports
 
 // The inner logic that uses the context
 const FormContent = () => {
@@ -11,13 +11,15 @@ const FormContent = () => {
 
   // If success, show the success view
   if (isSuccess) return <SuccessView />;
-  const renderStep=()=>{
+  const renderStep = () => {
     const amount = event?.ExtFee || 0;
-    if(step===0) return <StepCaptain />
-    if (step <= members.length) return <StepMember />;
-    if (!isInternal && amount > 0 && step > members.length) return <StepPayment />;
-    return null
-  }
+    if (step === 0) return <StepIdentity />;
+    if (step === 1) return <StepCaptain />;
+    if (step > 1 && step <= members.length + 1) return <StepMember />;
+    if (!isInternal && amount > 0 && step > members.length + 1) return <StepPayment />;
+    
+    return null;
+  };
   return (
     <div className="bg-zinc-900 border border-zinc-700 w-full max-w-lg rounded-3xl overflow-hidden flex flex-col max-h-[90vh]">
       <ErrorNotification />  
@@ -36,7 +38,7 @@ const FormContent = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <FormFooter />
+      {step > 0 && <FormFooter />}
     </div>
   );
 };
