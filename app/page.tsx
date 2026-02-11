@@ -8,9 +8,7 @@ import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
 import ThemeReveal from "@/components/ThemeReveal";
 import AlertBanner from "@/components/AlertBanner";
-import BottomAnnouncement from "@/components/BottomAnnouncement";
-
-
+import Merchandise from "@/components/Merchandise"
 const TARGET_DATE = new Date("2026-02-08T16:30:00");
 const eras = [
   {
@@ -167,7 +165,8 @@ export default function HeroSection() {
       </div>
       <BottomAnnouncement />
       <BentoGrid />
-      
+      <Merchandise />
+
     </main>
   );
 }

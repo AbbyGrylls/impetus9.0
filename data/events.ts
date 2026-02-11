@@ -69,7 +69,7 @@ export const eventsData = {
         color: "#1a1a1a",
         teamSize: { min: 2, max: 4 }, 
         deadline: "2026-02-11T23:59:00",
-        ExtFee: 100,
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Ayush Dutta (8972851567)","Mansi Mehra (9368550521)"],
         rulebook:"https://docs.google.com/document/d/1OodHk_IKRBqI3oAwfPnMR2uQHVW8RZoC/edit"
@@ -85,7 +85,7 @@ export const eventsData = {
         color: "#171717",
         teamSize: { min: 2, max: 2 }, 
         deadline: "2026-02-11T23:59:00",
-        ExtFee: 100,
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Bikram Pal (6296991941)","Agniva Hazra (9749424075)"],
         rulebook:"https://docs.google.com/document/d/1aHmnu-JOAS416g3PJ3VRwMtuoKK3O69T/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
@@ -101,7 +101,7 @@ export const eventsData = {
         color: "#141414",
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
-        ExtFee: 100,
+        ExtFee: 200,
         prizepool:"8k",
         coordinators:["Jitendra Kumar (6300651164)","Shubhankar Ghosh (9883080373)"],
         rulebook:"https://docs.google.com/document/d/1wzVtboklkyMNVV7_50I2p8V1OsUmPtXs/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
@@ -115,7 +115,7 @@ export const eventsData = {
         date: "NA",
         time: "NA",
         color: "#0f0f0f",
-        ExtFee: 100,
+        ExtFee: 200,
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-11T23:59:00",
         prizepool:"8k",
@@ -171,7 +171,7 @@ export const eventsData = {
         color: "#141414",
         teamSize: { min: 2, max: 4 },
         deadline: "2026-02-12T23:59:00",
-        ExtFee: 250,
+        ExtFee: 200,
         prizepool:"10k",
         coordinators:["Rohan Vikas Kudturkar (9321234034)","Swayam Gupta (7985873384) "],
         rulebook:"https://docs.google.com/document/d/1vnuBAW8poSmPbbzMvjV2009DwGr8WrN_/edit?rtpof=true"
@@ -185,7 +185,7 @@ export const eventsData = {
         date: "NA",
         time: "NA",
         color: "#0f0f0f",
-        ExtFee: 500,
+        ExtFee: 0,
         teamSize: { min: 1, max: 2 },
         deadline: "2026-02-12T23:59:00",
         prizepool:"40k",
