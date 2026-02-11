@@ -141,6 +141,14 @@ export const teamsData: TeamsData = {
           email: "2022meb029.debolina@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/debolina-das-a22715240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
+        {
+          name: "Sreejani Mukherjee",
+          phone: "7044442412",
+          post: "Lead",
+          imgname: "teamimages/Sreejani.jpeg",
+          email: "2022meb008.sreejani@students.iiests.ac.in",
+          link: "https://www.linkedin.com/in/sreejani-mukherjee-01539a2b8"
+        },
 
         {
           name: "Ayush Dutta",
@@ -155,80 +163,80 @@ export const teamsData: TeamsData = {
           phone: "9749424075",
           post: "Executive",
           imgname: "teamImages/Agniva.jpg",
-          email: "",
+          email: "hazrasayan007@gmail.com",
           link: "https://www.linkedin.com/in/agniva-hazra-85b4162a7/"
         },
         {
           name: "Aman Daulat Wankhede",
-          phone: "7448171318",
+          phone: "+91 7448171318",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aman.jpeg",
+          email: "amanwankhede2004@gmail.com",
+          link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Sachin Yadav",
-          phone: "",
+          phone: "+91 91152 40787",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Sachin.jpeg",
+          email: "sy806162@gmail.com",
+          link: "www.linkedin.com/in/sachin-yadav-1413b625a"
         },
         {
           name: "Durgesh Yadav",
-          phone: "",
+          phone: "+91 95324 51365",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Durgesh.jpeg",
+          email: "durgesh20041@gmail.com",
+          link: "https://www.linkedin.com/in/durgesh-yadav-298681289"
         },
         {
           name: "Swayam Gupta",
-          phone: "",
+          phone: "+91 79858 73384",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Swayam.jpeg",
+          email: "swayamgupta2764@gmail.com",
+          link: "https://www.linkedin.com/in/swayam-gupta-0a4483255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
           name: "Arti Kumari",
-          phone: "",
+          phone: "+91 8935810804",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Arti.jpeg",
+          email: "artikumari40503@gmail.com",
+          link: "https://www.linkedin.com/in/arti-kumari-313679340"
         },
         {
           name: "Bikram Pal",
-          phone: "",
+          phone: "+91 6296 991 941",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Bikram.jpeg",
+          email: "bikrampal068@gmail.com",
+          link: "https://www.linkedin.com/in/bikram-iiest?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
           name: "Pranay Dey",
-          phone: "",
+          phone: "+91 78648 75402",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Pranay.jpeg",
+          email: "mrdey9911@gmail.com",
+          link: "https://www.linkedin.com/in/pranay-dey-8888762b5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
           name: "Shubhankar Ghosh",
-          phone: "",
+          phone: "+91 9883080373",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Shubhankar.jpeg",
+          email: "shubhankarghosh908@gmail.com",
+          link: "https://www.linkedin.com/in/shubhankar-ghosh-a253102b3"
         },
         {
           name: "Sudeshna Hazra",
-          phone: "",
+          phone: "+91 7583980171",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Sudeshna.jpeg",
+          email: "hazrasudeshna7@gmail.com ",
+          link: "https://www.linkedin.com/in/sudeshna21"
         },
 
       ]
@@ -247,11 +255,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Mansi Mehra",
-          phone: "",
+          phone: "+91 93685 50521",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Mansi.jpeg",
+          email: "mansi2004mehra18@gmail.com",
+          link: "https://www.linkedin.com/in/mansi-mehra-65325738a/"
         },
       ]
     },
@@ -271,41 +279,41 @@ export const teamsData: TeamsData = {
           name: "Arunabh Bagchi",
           phone: "6232089966",
           post: "Lead",
-          imgname: "",
+          imgname: "teamImages/Arunabh.jpg",
           email: "2022meb066.arunabh@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/arunabh-bagchi-94412025b"
         },
         {
           name: "Kaladhar Gopal",
-          phone: "",
+          phone: "+91 93014 95160",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/KaladharGopalPhoto.png",
+          email: "kaladhargopal@gmail.com",
+          link: "https://www.linkedin.com/in/kaladhar-gopal-9490bb265/"
         },
         {
           name: "Aykchat Kalita",
-          phone: "",
+          phone: "+91 60010 11665",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aykchat.jpeg",
+          email: "aykchatkalita@gmail.com",
+          link: "https://www.linkedin.com/in/aykchat-kalita-2a754428a/"
         },
         {
           name: "Avishek Pal",
-          phone: "",
+          phone: "+91 98320 61992",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Avishek.jpeg",
+          email: "apal50279@gmail.com",
+          link: "https://www.linkedin.com/in/avishekpal678?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
           name: "Ankit Kumar",
-          phone: "",
+          phone: "+91 80038 64485",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Ankit.jpeg",
+          email: "ankitkumarmishra0917@gmail.com",
+          link: "https://www.linkedin.com/in/ankit-kumar-042878292"
         },
 
       ]
@@ -325,7 +333,7 @@ export const teamsData: TeamsData = {
         {
           name: "Abhishek Bhatt",
           phone: "6395399362",
-          post: "",
+          post: "Lead",
           imgname: "teamimages/Abhishek Bhatt.JPG",
           email: "abhibhatt6601@gmail.com",
           link: "https://www.linkedin.com/in/abhishek-bhatt-306b28259/"
@@ -334,17 +342,17 @@ export const teamsData: TeamsData = {
           name: "Aman Daulat Wankhede",
           phone: "7448171318",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aman.jpeg",
+          email: "amanwankhede2004@gmail.com",
+          link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Rohan Vikas Kudtudkar",
-          phone: "",
+          phone: "+91 93212 34034",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Rohan.jpeg",
+          email: "rohan.kudtudkar30@gmail.com",
+          link: "https://www.linkedin.com/in/rohan-kudtudkar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
           name: "Ayush Dutta",
@@ -378,27 +386,27 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Kush Jajodia",
-          phone: "",
+          phone: "+91 78469 93636",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Kush.jpeg",
+          email: "kushjajodia2005@gmail.com",
+          link: "https://www.linkedin.com/in/kushjajodia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
           name: "Rohan Kanhai",
-          phone: "",
+          phone: "+91 96793 78342",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/RohanKanhai.jpeg",
+          email: "rohankanhaiya1929@gmail.com",
+          link: "https://in.linkedin.com/in/rohan-kanhai-59786b277"
         },
         {
           name: "Srishti Sanjay Pal",
-          phone: "",
+          phone: "+91 8900540369",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Shrishti.jpeg",
+          email: "srishtipal29@gmail.com",
+          link: "https://www.linkedin.com/in/srishti-sanjay-pal-8179172a5"
         },
       ]
     },
@@ -433,11 +441,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Anshuman Mondal",
-          phone: "",
+          phone: "+91 90646 62805",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Anshuman.jpg",
+          email: "anshumanmondal.official@gmail.com",
+          link: "https://www.linkedin.com/in/anshumanmondal"
         },
       ]
     },
@@ -455,19 +463,19 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Soumyadita Mondal",
-          phone: "",
+          phone: "+91 77977 54924",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Soumyadita.jpeg",
+          email: "soumyadityamandal21@gmail.com",
+          link: "https://www.linkedin.com/in/soumyaditya-mandal/"
         },
         {
           name: "Nikhil Kumar",
-          phone: "",
+          phone: "+91 78580 10472",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Nikhil.jpeg",
+          email: "nikhil608855@gmail.com",
+          link: "https://www.linkedin.com/in/nikhil-kumar2003b"
         },
       ]
     }
