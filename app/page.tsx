@@ -158,7 +158,6 @@ export default function HeroSection() {
           </svg>
         </div>
       </div>
-      <BottomAnnouncement />
       <Merchandise />
       <BentoGrid />
 
