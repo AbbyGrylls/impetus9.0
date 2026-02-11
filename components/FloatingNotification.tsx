@@ -14,12 +14,14 @@ export default function FloatingNotification() {
       drag
       dragMomentum={false}
       dragElastic={0.2}
-      className="fixed bottom-6 right-6 z-50 cursor-pointer"
+      className="
+        fixed top-4 right-4 z-50 cursor-pointer     /* Mobile default */
+        sm:top-auto sm:bottom-6 sm:right-6          /* Larger screens */
+      "
       onDragStart={() => {
         wasDragged.current = true;
       }}
       onDragEnd={() => {
-        // Small timeout so click doesn't fire immediately after drag
         setTimeout(() => {
           wasDragged.current = false;
         }, 50);
@@ -31,8 +33,7 @@ export default function FloatingNotification() {
       }}
       whileTap={{ scale: 0.9 }}
     >
-      <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20
- shadow-xl hover:bg-blue-500 transition-all duration-300">
+      <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-blue-500 transition-all duration-300">
         <Bell className="text-white w-6 h-6" />
 
         {/* Notification Dot */}
