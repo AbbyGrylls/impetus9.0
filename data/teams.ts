@@ -141,6 +141,14 @@ export const teamsData: TeamsData = {
           email: "2022meb029.debolina@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/debolina-das-a22715240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
+        {
+          name: "Sreejani Mukherjee",
+          phone: "7044442412",
+          post: "Lead",
+          imgname: "teamimages/Sreejani.jpeg",
+          email: "2022meb008.sreejani@students.iiests.ac.in",
+          link: "https://www.linkedin.com/in/sreejani-mukherjee-01539a2b8"
+        },
 
         {
           name: "Ayush Dutta",
@@ -160,11 +168,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Aman Daulat Wankhede",
-          phone: "7448171318",
+          phone: "+91 7448171318",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aman.jpeg",
+          email: "amanwankhede2004@gmail.com",
+          link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Sachin Yadav",
@@ -192,11 +200,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Arti Kumari",
-          phone: "",
+          phone: "+91 8935810804",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Arti.jpeg",
+          email: "artikumari40503@gmail.com",
+          link: "https://www.linkedin.com/in/arti-kumari-313679340"
         },
         {
           name: "Bikram Pal",
@@ -216,19 +224,19 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Shubhankar Ghosh",
-          phone: "",
+          phone: "+91 9883080373",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Shubhankar.jpeg",
+          email: "shubhankarghosh908@gmail.com",
+          link: "https://www.linkedin.com/in/shubhankar-ghosh-a253102b3"
         },
         {
           name: "Sudeshna Hazra",
-          phone: "",
+          phone: "+91 7583980171",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Sudeshna.jpeg",
+          email: "hazrasudeshna7@gmail.com ",
+          link: "https://www.linkedin.com/in/sudeshna21"
         },
 
       ]
@@ -271,17 +279,17 @@ export const teamsData: TeamsData = {
           name: "Arunabh Bagchi",
           phone: "6232089966",
           post: "Lead",
-          imgname: "",
+          imgname: "teamImages/Arunabh.jpg",
           email: "2022meb066.arunabh@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/arunabh-bagchi-94412025b"
         },
         {
           name: "Kaladhar Gopal",
-          phone: "",
+          phone: "+91 93014 95160",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/KaladharGopalPhoto.png",
+          email: "kaladhargopal@gmail.com",
+          link: "https://www.linkedin.com/in/kaladhar-gopal-9490bb265/"
         },
         {
           name: "Aykchat Kalita",
@@ -334,9 +342,9 @@ export const teamsData: TeamsData = {
           name: "Aman Daulat Wankhede",
           phone: "7448171318",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aman.jpeg",
+          email: "amanwankhede2004@gmail.com",
+          link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Rohan Vikas Kudtudkar",
@@ -394,11 +402,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Srishti Sanjay Pal",
-          phone: "",
+          phone: "+91 8900540369",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Shrishti.jpeg",
+          email: "srishtipal29@gmail.com",
+          link: "https://www.linkedin.com/in/srishti-sanjay-pal-8179172a5"
         },
       ]
     },
