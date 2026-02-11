@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { Orbitron, Montserrat, Inter, Bebas_Neue, Roboto, Rowdies, Nunito } from "next/font/google";
+import {
+  Orbitron,
+  Montserrat,
+  Inter,
+  Bebas_Neue,
+  Roboto,
+  Rowdies,
+  Nunito,
+} from "next/font/google";
 import "./globals.css";
 import { EraProvider } from "../context/EraContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientLayout from "./ClientLayout";
+import FloatingNotification from "@/components/FloatingNotification";
 const inter = Inter({ subsets: ["latin"] });
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
@@ -44,7 +53,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Impetus 9.0",
-  description: "Annual Technical Fest of the Department of Mechanical Engineering, IIEST Shibpur",
+  description:
+    "Annual Technical Fest of the Department of Mechanical Engineering, IIEST Shibpur",
 };
 
 export default function RootLayout({
@@ -54,7 +64,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} ${montserrat.variable} ${inter.className} ${bebas.variable} ${roboto.variable} ${rowdies.variable} ${nunito.variable} bg-black text-white antialiased`}>
+      <body
+        className={`${orbitron.variable} ${montserrat.variable} ${inter.className} ${bebas.variable} ${roboto.variable} ${rowdies.variable} ${nunito.variable} bg-black text-white antialiased`}
+      >
         <ClientLayout>
           <EraProvider>
             <Navbar />
@@ -62,7 +74,7 @@ export default function RootLayout({
             <Footer />
           </EraProvider>
         </ClientLayout>
-        
+        <FloatingNotification />
         <Analytics />
       </body>
     </html>
