@@ -1,61 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function BottomAnnouncement() {
-  const [visible, setVisible] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const hasSeen = sessionStorage.getItem("announcement_seen");
-
-    if (!hasSeen) {
-      setVisible(true);
-
-      const timer = setTimeout(() => {
-        setVisible(false);
-        sessionStorage.setItem("announcement_seen", "true");
-      }, 10000); // 10 seconds
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 0, y: 40, x: 40 }}
-          animate={{ opacity: 1, y: 0, x: 0 }}
-          exit={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          onClick={() => router.push("/feed")}
-          className="fixed bottom-0 right-0 w-full z-50 cursor-pointer"
-        >
-          <div className="relative overflow-hidden backdrop-blur-xl bg-black/70 border-t border-white/10 shadow-2xl">
-            
-            {/* Premium glow line */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-40" />
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+      onClick={() => router.push("/feed")}
+      className="fixed bottom-0 left-0 right-0 z-50 w-full cursor-pointer"
+    >
+      <div className="relative overflow-hidden backdrop-blur-xl bg-black/80 border-t border-white/20 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        
+        {/* Premium glow line */}
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-70" />
 
-            <div className="h-14 flex items-center">
-              <motion.div
-                initial={{ x: "100%" }}
-                animate={{ x: "-100%" }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 12,
-                  ease: "linear",
-                }}
-                className="whitespace-nowrap text-lg font-semibold tracking-wide text-white px-6"
-              >
-                🔔 Registrations closing soon — Secure your spot now 🔔
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        <div className="h-12 md:h-14 flex items-center w-full">
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: "-100%" }}
+            transition={{
+              repeat: Infinity,
+              duration: 15, // Adjusted speed for readability
+              ease: "linear",
+            }}
+            className="whitespace-nowrap text-sm md:text-lg font-semibold tracking-wide text-white flex items-center gap-8"
+          >
+            <span>🔔 Registrations closing soon — Secure your spot now</span>
+            <span>📢 Check the Alerts page for live updates</span>
+            <span>🔔 Registrations closing soon — Secure your spot now</span>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
   );
 }

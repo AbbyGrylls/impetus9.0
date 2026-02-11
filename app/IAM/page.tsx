@@ -73,11 +73,6 @@ const speakers = [
     img: "Threee.jpeg",
   },
   {
-    name: "Dr.Sudeb Datta",
-    description: "Technical Director water and gas utilities, M.N. Dastur",
-    img: "fourrrr.jpeg",
-  }, 
-  {
     name: "Mr. Tatababu Botsa",
     description:
       "Deputy General Manager, Garden Reach Shipbuilders & Engineers Ltd.",

@@ -15,13 +15,15 @@ export default function FloatingNotification() {
       dragMomentum={false}
       dragElastic={0.2}
       className="
-        fixed top-4 right-4 z-50 cursor-pointer     /* Mobile default */
-        sm:top-auto sm:bottom-6 sm:right-6          /* Larger screens */
+        hidden md:block               /* HIDDEN on mobile, BLOCK on desktop */
+        fixed z-50 cursor-pointer
+        bottom-6 right-6              /* Desktop positioning */
       "
       onDragStart={() => {
         wasDragged.current = true;
       }}
       onDragEnd={() => {
+        // Short timeout prevents click triggering immediately after drag release
         setTimeout(() => {
           wasDragged.current = false;
         }, 50);

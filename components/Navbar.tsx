@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Bell } from "lucide-react";
+// 1. Import the new icons here
+import { Bell, Home, Calendar, User } from "lucide-react"; 
 import { useEra } from "@/context/EraContext";
 
 export default function Navbar() {
@@ -12,7 +13,7 @@ export default function Navbar() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const [alertCount] = useState(2); // TEMP: replace with API later
+  const [alertCount] = useState(2); 
 
   const borderColors = [
     "border-amber-500/60 shadow-amber-900/20",
@@ -33,15 +34,16 @@ export default function Navbar() {
 
   const mobileIconPillStyle = `h-14 w-14 bg-white/10 backdrop-blur-xl border ${currentBorderStyle} shadow-lg rounded-full flex items-center justify-center transition-all duration-1000 active:scale-95`;
 
+  // 2. Add 'icon' property to your links
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Events", href: "/events" },
-    { name: "Sponsors", href: "/sponsors" },
-    { name: "Teams", href: "/teams" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "IAM", href: "/IAM" },
-    { name: "Alerts", href: "/feed" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "About", href: "/about", icon: null },
+    { name: "Events", href: "/events", icon: Calendar },
+    { name: "Sponsors", href: "/sponsors", icon: null },
+    { name: "Teams", href: "/teams", icon: null },
+    { name: "Gallery", href: "/gallery", icon: null },
+    { name: "IAM", href: "/IAM", icon: User },
+    { name: "Alerts", href: "/feed", icon: Bell },
   ];
 
   const mobileBottomTabs = navLinks.filter((link) =>
@@ -77,6 +79,7 @@ export default function Navbar() {
 
         <div className="flex gap-9 text-white text-[17px] items-center mr-8 font-display">
           {navLinks.map((link) => {
+            // Desktop Alert Logic (Unchanged)
             if (link.name === "Alerts") {
               return (
                 <div key={link.name} className="relative group">
@@ -85,35 +88,15 @@ export default function Navbar() {
                     className="relative hover:text-cyan-400 transition-colors flex items-center"
                   >
                     ALERTS
-
                     {alertCount > 0 && (
-                      <span
-                        className="
-                          absolute -top-2 -right-3
-                          bg-amber-400 text-black
-                          text-[10px] font-bold
-                          px-1.5 py-0.5
-                          rounded-full shadow-md
-                        "
-                      >
+                      <span className="absolute -top-2 -right-3 bg-amber-400 text-black text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-md">
                         {alertCount}
                       </span>
                     )}
                   </Link>
-
-                  {/* 🔔 TOOLTIP */}
+                  {/* Tooltip */}
                   {alertCount > 0 && (
-                    <span
-                      className="
-                        pointer-events-none
-                        absolute left-1/2 -translate-x-1/2 top-8
-                        bg-black/90 text-white text-[12px]
-                        px-3 py-1.5 rounded-md
-                        opacity-0 group-hover:opacity-100
-                        transition-opacity duration-200
-                        whitespace-nowrap z-50
-                      "
-                    >
+                    <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-8 bg-black/90 text-white text-[12px] px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
                       Registrations closing soon
                     </span>
                   )}
@@ -147,13 +130,7 @@ export default function Navbar() {
       </Link>
 
       {isMenuOpen && (
-        <div
-          className="
-            md:hidden fixed bottom-24 right-6 z-50
-            w-35 py-3 bg-black/80 backdrop-blur-xl shadow-2xl
-            rounded-2xl flex flex-col items-center gap-4
-          "
-        >
+        <div className="md:hidden fixed bottom-24 right-6 z-50 w-35 py-3 bg-black/80 backdrop-blur-xl shadow-2xl rounded-2xl flex flex-col items-center gap-4">
           {mobileDropdownLinks.map((link) => (
             <Link
               key={link.name}
@@ -174,37 +151,39 @@ export default function Navbar() {
           shadow-2xl rounded-full flex items-center justify-around px-2
         `}
       >
-        {mobileBottomTabs.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            onClick={closeMenu}
-            className="flex flex-col items-center justify-center w-full h-full gap-1 text-white"
-          >
-            {link.name === "Alerts" && (
+        {mobileBottomTabs.map((link) => {
+          // 3. Destructure the Icon
+          const IconComponent = link.icon; 
+
+          return (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={closeMenu}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 ${
+                // Optional: Highlights IAM in mobile too
+                link.name === "IAM" ? "text-cyan-300" : "text-white"
+              }`}
+            >
               <div className="relative">
-                <Bell className="w-6 h-6" />
-                {alertCount > 0 && (
-                  <span
-                    className="
-                      absolute -top-1.5 -right-1.5
-                      bg-amber-400 text-black text-[9px]
-                      w-4 h-4 rounded-full
-                      flex items-center justify-center
-                    "
-                  >
+                {/* 4. Render the Icon */}
+                {IconComponent && <IconComponent className="w-6 h-6" />}
+
+                {/* Badge for Alerts */}
+                {link.name === "Alerts" && alertCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 bg-amber-400 text-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
                     {alertCount}
                   </span>
                 )}
               </div>
-            )}
 
-            <span className="text-[10px] uppercase tracking-wider font-semibold">
-              {link.name}
-            </span>
-          </Link>
-        ))}
+              <span className="text-[10px] uppercase tracking-wider font-semibold">
+                {link.name}
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </>
   );
-} 
+}
