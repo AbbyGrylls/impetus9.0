@@ -211,29 +211,66 @@
     };
 
     export const StepMember = () => {
-        const { step, members, updateMember, minMembers, isInternal } = useRegistrationContext();
-        const currentMemberIndex = step - 1;
-        const member = members[currentMemberIndex] || { name: "", phone: "", roll: "" };
-        const isMandatory = currentMemberIndex < minMembers;
+    // 1. Get the current step
+    const { step, members, updateMember, minMembers, isInternal } = useRegistrationContext();
+    
+    // 2. THE FIX: Shift the calculation by 2
+    // Step 0 = Identity
+    // Step 1 = Captain
+    // Step 2 = Member 1 (Index 0)
+    const currentMemberIndex = step - 2; 
 
-        if (!members[currentMemberIndex] && step > 0) return null;
+    // 3. Safety check: Ensure we don't crash if index is invalid
+    const member = members[currentMemberIndex] || { name: "", phone: "", roll: "" };
+    
+    // 4. Determine if this specific member is mandatory
+    const isMandatory = currentMemberIndex < minMembers;
 
-        return (
-            <>
-                <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-white">Member {currentMemberIndex + 1} Details</h3>
-                    {isMandatory ? (
-                        <span className="text-xs bg-red-500/10 text-red-500 px-2 py-1 rounded border border-red-500/20">Compulsory</span>
-                    ) : (
-                        <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded">Optional</span>
-                    )}
-                </div>
-                <InputField label="Full Name" value={member.name} onChange={(v: any) => updateMember(currentMemberIndex, "name", v)} required={isMandatory} />
-                <InputField label="Phone Number" value={member.phone} onChange={(v: any) => updateMember(currentMemberIndex, "phone", v)} required={isMandatory} />
-                {isInternal && <InputField label="Roll Number" value={member.roll} onChange={(v: any) => updateMember(currentMemberIndex, "roll", v)} required={isMandatory} />}
-            </>
-        );
-    };
+    // Prevent rendering if out of bounds (redundant safety)
+    if (!members[currentMemberIndex] && step > 1) return null;
+
+    return (
+        <>
+            <div className="flex items-center justify-between">
+                <h3 className="text-lg font-bold text-white">
+                    Member {currentMemberIndex + 1} Details
+                </h3>
+                {isMandatory ? (
+                    <span className="text-xs bg-red-500/10 text-red-500 px-2 py-1 rounded border border-red-500/20">
+                        Compulsory
+                    </span>
+                ) : (
+                    <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded">
+                        Optional
+                    </span>
+                )}
+            </div>
+            
+            <InputField 
+                label="Full Name" 
+                value={member.name} 
+                onChange={(v: any) => updateMember(currentMemberIndex, "name", v)} 
+                required={isMandatory} 
+            />
+            
+            <InputField 
+                label="Phone Number" 
+                value={member.phone} 
+                onChange={(v: any) => updateMember(currentMemberIndex, "phone", v)} 
+                required={isMandatory} 
+            />
+            
+            {isInternal && (
+                <InputField 
+                    label="Roll Number" 
+                    value={member.roll} 
+                    onChange={(v: any) => updateMember(currentMemberIndex, "roll", v)} 
+                    required={isMandatory} 
+                />
+            )}
+        </>
+    );
+};
 
     // --- 5. FOOTER (UPDATED LAYOUT) ---
     export const FormFooter = () => {
