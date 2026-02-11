@@ -9,7 +9,10 @@ import BentoGrid from "@/components/BentoGrid";
 import ThemeReveal from "@/components/ThemeReveal";
 import AlertBanner from "@/components/AlertBanner";
 import Merchandise from "@/components/Merchandise"
+<<<<<<< HEAD
 
+=======
+>>>>>>> b46057d591dfcfbc2f8d754b0e65c956eb6f7946
 const TARGET_DATE = new Date("2026-02-08T16:30:00");
 const eras = [
   {

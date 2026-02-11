@@ -5,12 +5,12 @@ import { RegistrationContext } from "./RegistrationContext";
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 const mobileRegex = /^[6-9]\d{9}$/;
-const rollRegex = /^[0-9]{4}[A-Z]{3}[0-9]{3}$/;
+const rollRegex = /^[0-9]{4}[A-Z]{3}[0-9]{3}$/; // Adjust based on your college format
 
 export const RegistrationProvider = ({ children, event, onClose }: any) => {
   // --- STATE ---
   const [step, setStep] = useState(0);
-  const [isInternal, setIsInternal] = useState(true); // Default to Internal
+  const [isInternal, setIsInternal] = useState(true); // Default
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [receiptId, setReceiptId] = useState("");
@@ -21,11 +21,11 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
   const [teamName, setTeamName] = useState("");
   const [captain, setCaptain] = useState({ name: "", phone: "", roll: "" });
   
-  // --- 1. CONFIG UPDATES ---
+  // --- CONFIG ---
+  // Captain counts as 1, so remaining members = max - 1
   const maxMembers = event.teamSize.max - 1; 
   const minMembers = Math.max(0, event.teamSize.min - 1);
   
-  // *** NEW: Get Fee Amount ***
   const amount = event.ExtFee || 0;
 
   const [members, setMembers] = useState(
@@ -34,13 +34,12 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
 
   const [paymentFile, setPaymentFile] = useState<File | null>(null);
 
-  // *** UPDATED: LOGIC FOR PAYMENT REQUIREMENT ***
-  // Payment is needed ONLY if: It is External AND The fee is greater than 0
+  // Payment Logic: Only if External AND Fee > 0
   const needsPayment = !isInternal && amount > 0;
 
   // *** UPDATED: Total Steps Calculation ***
-  // If needsPayment is false, we do not add the extra step.
-  const totalSteps = 1 + maxMembers + (needsPayment ? 1 : 0);
+  // 1 (Identity) + 1 (Captain) + maxMembers + (Payment ? 1 : 0)
+  const totalSteps = 2 + maxMembers + (needsPayment ? 1 : 0);
 
   useEffect(() => {
     const setFp = async () => {
@@ -67,32 +66,44 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     setMembers(newMembers);
   };
 
-  // --- VALIDATION ---
+  const toggleInternal = () => {
+    // When toggling, we DO NOT reset to step 0 automatically here
+    // because the user might just be correcting a mistake.
+    // However, the Identity UI calls handleNext() immediately after toggling.
+    setIsInternal(!isInternal);
+  };
+
+  // --- VALIDATION (THE FIX IS HERE) ---
   const validateStep = (currentStep: number) => {
     setErrorMsg("");
     
-    // Step 0: Captain
-    if (currentStep === 0) {
+    // *** STEP 0: Identity ***
+    // No validation needed for buttons (User clicks Yes/No)
+    if (currentStep === 0) return null;
+
+    // *** STEP 1: Captain & Team Name (Previously Step 0) ***
+    if (currentStep === 1) {
       if (!teamName.trim()) return "Team Name is required.";
       if (!captain.name.trim()) return "Captain Name is required.";
       if (!mobileRegex.test(captain.phone)) return "Invalid Captain Phone (Indian 10-digit).";
-      if (isInternal && !rollRegex.test(captain.roll)) return "Invalid Captain Roll (e.g., 2023MEB025).";
+      if (isInternal && !rollRegex.test(captain.roll)) return "Invalid Captain Roll Number.";
       return null;
     }
 
-    // *** UPDATED: Payment Validation ***
-    // We strictly check if needsPayment is true before validating the file
+    // *** Payment Validation ***
+    // Check if this is the last step AND payment is required
     const isPaymentStep = needsPayment && currentStep === (totalSteps - 1);
-    
     if (isPaymentStep) {
         if (!paymentFile) return "Please upload the payment screenshot.";
         return null;
     }
 
-    // Step: Members (Middle steps)
-    // We check if currentStep is within the member range
-    if (currentStep > 0 && currentStep <= maxMembers) {
-        const memberIndex = currentStep - 1;
+    // *** Member Validation (Middle steps) ***
+    // Range: Starts at Step 2 (Member 0) up to Step (maxMembers + 1)
+    if (currentStep > 1 && currentStep <= maxMembers + 1) {
+        // *** SHIFT INDEX: Step 2 is Index 0 ***
+        const memberIndex = currentStep - 2;
+        
         const member = members[memberIndex];
         const isMandatory = memberIndex < minMembers;
 
@@ -102,6 +113,7 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
             if (isInternal && !rollRegex.test(member.roll)) return `Invalid Member ${memberIndex + 1} Roll.`;
         } 
         else if (member.name || member.phone || member.roll) {
+            // Partial fill check for optional members
             if (!member.name.trim()) return "Name is required if adding a member.";
             if (!mobileRegex.test(member.phone)) return "Invalid Phone Number.";
             if (isInternal && !rollRegex.test(member.roll)) return "Invalid Roll Number.";
@@ -138,7 +150,6 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
         ...(isInternal && { memRoll: m.roll.trim() }),
       }));
 
-    // Base Payload (Common Data)
     const basePayload = {
       eventName: event.backendValue,
       teamName: teamName.trim(),
@@ -151,18 +162,16 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     };
 
     try {
-      const apiUrl = '/api/register';
+      const apiUrl = '/api/register'; // Ensure this matches your Next.js API route
       let response;
 
       if (isInternal) {
-        // --- INTERNAL: SEND JSON ---
         response = await fetch(apiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(basePayload),
         });
       } else {
-        // --- EXTERNAL: SEND FORMDATA (MULTIPART) ---
         const formData = new FormData();
         
         formData.append("eventName", basePayload.eventName);
@@ -171,10 +180,8 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
         formData.append("capPhone", basePayload.capPhone);
         formData.append("participantType", "EXTERNAL");
         formData.append("deviceFingerprint", basePayload.deviceFingerprint);
-        
         formData.append("teamMembers", JSON.stringify(validMembers));
         
-        // *** UPDATED: Only append file if payment was actually needed and file exists ***
         if (needsPayment && paymentFile) {
             formData.append("paymentScreenshot", paymentFile);
         }
@@ -226,7 +233,6 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
     doc.setFont("courier", "bold");
     doc.setFontSize(14);
     
-    // *** UPDATED: Show different status if free external event ***
     let statusText = receiptId;
     if (!isInternal && receiptId === "PENDING") {
         statusText = needsPayment ? "VERIFICATION PENDING" : "CONFIRMED";
@@ -278,10 +284,7 @@ export const RegistrationProvider = ({ children, event, onClose }: any) => {
       teamName, captain, members, event, minMembers,
       paymentFile, setPaymentFile,
 
-      toggleInternal: () => {
-        setIsInternal(!isInternal);
-        setStep(0); 
-      },
+      toggleInternal, // Use the new function
       setTeamName, updateCaptain, updateMember,
       handleNext, handlePrev, handleSubmit, downloadReceipt, closeForm: onClose
     }}>
