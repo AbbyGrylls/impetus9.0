@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactCard, { TeamMember } from "@/components/ContactCard";
 import { teamsData } from "@/data/teams";
-import UnderConstruction from "@/components/UnderConstruction";
+
 export default function TeamPage() {
   const [value, setValue] = useState(0);
   const [mobileSelected, setMobileSelected] = useState(false);
@@ -21,30 +21,19 @@ export default function TeamPage() {
   const heads = currentTeam.members.filter(
     (m) =>
       m.post.toLowerCase().includes("head") ||
-      m.post.toLowerCase() === "coordinator"
+      m.post.toLowerCase().includes("lead") || // Added 'lead' as your data uses 'Lead'
+      m.post.toLowerCase() === "coordinator" ||
+      m.post.toLowerCase() === "joint coordinator"
   );
 
   const staff = currentTeam.members.filter(
     (m) =>
       !m.post.toLowerCase().includes("head") &&
-      m.post.toLowerCase() !== "coordinator"
+      !m.post.toLowerCase().includes("lead") &&
+      m.post.toLowerCase() !== "coordinator" &&
+      m.post.toLowerCase() !== "joint coordinator"
   );
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const handleUnlock = () => {
-    setIsUnlocked(true);
-    sessionStorage.setItem("events_page_unlocked", "true");
-    alert("Developer Mode: Unlocked"); // Optional feedback
-  };
-  if (!isUnlocked) {
-    return (
-      <UnderConstruction
-        title="Work under progress"
-        subtitle="Almost ready! Check back soon"
-        progress={75}
-        onSecretUnlock={handleUnlock} // Pass the function here
-      />
-    );
-  }
+
   return (
     <div className="bg-black min-h-screen pb-32">
 
@@ -136,6 +125,7 @@ export default function TeamPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      
       {/* 2. Mobile Sticky Header Bar */}
       <div className="md:hidden">
         <AnimatePresence>
@@ -144,25 +134,22 @@ export default function TeamPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              // FIXED top-0: Surface touches top of screen
-              // pt-20: Pushes text below your navbar circles
               className="fixed top-0 left-0 right-0 z-4 bg-black/90 backdrop-blur-md border-b border-zinc-800 pt-20 pb-4"
             >
               <div className="relative w-full flex justify-center items-center">
 
-                {/* VISUAL LAYER: Clean text + Arrow (No Pill/Border) */}
+                {/* VISUAL LAYER */}
                 <div className="flex items-center gap-2">
                   <span className="text-zinc-100 text-xs uppercase tracking-[0.15em] font-bold">
                     {teamsList[value].teamName}
                   </span>
 
-                  {/* Yellow Arrow Immediately Next to Text */}
                   <svg className="w-4 h-4 text-yellow-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
 
-                {/* FUNCTIONAL LAYER: Invisible Select Overlay */}
+                {/* FUNCTIONAL LAYER */}
                 <select
                   value={value}
                   onChange={(e) => setValue(Number(e.target.value))}
@@ -196,24 +183,25 @@ export default function TeamPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            // Padding top to clear the taller sticky header
             className="pt-44 md:pt-0"
           >
-            {/* SECTION 1: HEADS */}
-            <div className="flex flex-wrap justify-center gap-16 mb-24">
+            {/* SECTION 1: HEADS / LEADS */}
+            <div className="flex flex-wrap justify-center gap-16 mb-16">
               {heads.map((person: TeamMember, idx: number) => (
+                // Assuming grayscale is handled via CSS classes in ContactCard, 
+                // typically removing 'grayscale' class or passing a prop like 'noGrayscale' works.
+                // Since I can't see ContactCard, ensuring standard render here.
                 <ContactCard key={`head-${idx}`} person={person} />
               ))}
             </div>
 
-            {/* Spatial divider */}
-            {staff.length > 0 && (
-              <div className="flex items-center justify-center mb-16">
-                <div className="w-12 h-px bg-zinc-800" />
-              </div>
+            {/* REPLACED DIVIDER with a transparent spacer or section header if needed.
+                Currently just empty space to separate the grid. */}
+            {staff.length > 0 && heads.length > 0 && (
+              <div className="w-full h-16" /> 
             )}
 
-            {/* SECTION 2: STAFF */}
+            {/* SECTION 2: STAFF / EXECUTIVES */}
             <div className="flex flex-wrap justify-center gap-8">
               {staff.map((person, idx) => (
                 <ContactCard key={`staff-${idx}`} person={person} />

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-// 1. Import the new icons here
-import { Bell, Home, Calendar, User } from "lucide-react"; 
+// 1. Import the MoreHorizontal icon
+import { Bell, Home, Calendar, User, MoreHorizontal } from "lucide-react"; 
 import { useEra } from "@/context/EraContext";
 
 export default function Navbar() {
@@ -12,6 +12,7 @@ export default function Navbar() {
   const { currentEraIndex } = useEra();
 
   const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const [alertCount] = useState(2); 
 
@@ -34,7 +35,6 @@ export default function Navbar() {
 
   const mobileIconPillStyle = `h-14 w-14 bg-white/10 backdrop-blur-xl border ${currentBorderStyle} shadow-lg rounded-full flex items-center justify-center transition-all duration-1000 active:scale-95`;
 
-  // 2. Add 'icon' property to your links
   const navLinks = [
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: null },
@@ -46,12 +46,15 @@ export default function Navbar() {
     { name: "Alerts", href: "/feed", icon: Bell },
   ];
 
+  // 2. Define visible tabs vs hidden menu links
+  const visibleTabNames = ["Home", "Events", "Alerts", "IAM"];
+
   const mobileBottomTabs = navLinks.filter((link) =>
-    ["Home", "Events", "Alerts", "IAM"].includes(link.name)
+    visibleTabNames.includes(link.name)
   );
 
-  const mobileDropdownLinks = navLinks.filter((link) =>
-    !["Home", "Events", "Alerts", "IAM"].includes(link.name)
+  const mobileMoreLinks = navLinks.filter((link) =>
+    !visibleTabNames.includes(link.name)
   );
 
   return (
@@ -79,7 +82,6 @@ export default function Navbar() {
 
         <div className="flex gap-9 text-white text-[17px] items-center mr-8 font-display">
           {navLinks.map((link) => {
-            // Desktop Alert Logic (Unchanged)
             if (link.name === "Alerts") {
               return (
                 <div key={link.name} className="relative group">
@@ -129,14 +131,22 @@ export default function Navbar() {
         <Image src="/impetusLogo.png" alt="Logo" width={32} height={32} priority />
       </Link>
 
+      {/* 4. Small Bottom-Right Menu Container */}
       {isMenuOpen && (
-        <div className="md:hidden fixed bottom-24 right-6 z-50 w-35 py-3 bg-black/80 backdrop-blur-xl shadow-2xl rounded-2xl flex flex-col items-center gap-4">
-          {mobileDropdownLinks.map((link) => (
+        <div
+          className={`
+            md:hidden fixed bottom-24 right-4 z-50
+            w-40 py-4 bg-black/90 backdrop-blur-xl border border-white/10
+            shadow-2xl rounded-2xl flex flex-col items-center gap-4
+            animate-in slide-in-from-bottom-5 fade-in duration-200
+          `}
+        >
+          {mobileMoreLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={closeMenu}
-              className={`text-white text-lg hover:${currentTextColor}`}
+              className={`text-white text-lg font-medium tracking-wide hover:${currentTextColor}`}
             >
               {link.name}
             </Link>
@@ -146,43 +156,51 @@ export default function Navbar() {
 
       <div
         className={`
-          md:hidden fixed bottom-6 left-6 right-6 z-50 h-16
-          bg-white/10 backdrop-blur-xl border ${currentBorderStyle}
-          shadow-2xl rounded-full flex items-center justify-around px-2
+          md:hidden fixed bottom-6 left-4 right-4 z-50 h-16
+          bg-black/80 backdrop-blur-xl border ${currentBorderStyle}
+          shadow-2xl rounded-2xl flex items-center justify-between px-4
         `}
       >
+        {/* Render visible tabs */}
         {mobileBottomTabs.map((link) => {
-          // 3. Destructure the Icon
-          const IconComponent = link.icon; 
-
+          const IconComponent = link.icon;
           return (
             <Link
               key={link.name}
               href={link.href}
               onClick={closeMenu}
               className={`flex flex-col items-center justify-center w-full h-full gap-1 ${
-                // Optional: Highlights IAM in mobile too
-                link.name === "IAM" ? "text-cyan-300" : "text-white"
+                link.name === "IAM" ? "text-cyan-300" : "text-white/80"
               }`}
             >
               <div className="relative">
-                {/* 4. Render the Icon */}
-                {IconComponent && <IconComponent className="w-6 h-6" />}
-
-                {/* Badge for Alerts */}
+                {IconComponent && <IconComponent className="w-5 h-5" />}
+                
                 {link.name === "Alerts" && alertCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-amber-400 text-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
+                  <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-black text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
                     {alertCount}
                   </span>
                 )}
               </div>
-
-              <span className="text-[10px] uppercase tracking-wider font-semibold">
+              <span className="text-[9px] uppercase tracking-wider font-semibold">
                 {link.name}
               </span>
             </Link>
           );
         })}
+
+        {/* 3. Render "More" Toggle Button */}
+        <button
+          onClick={toggleMenu}
+          className={`flex flex-col items-center justify-center w-full h-full gap-1 ${
+             isMenuOpen ? currentTextColor : "text-white/80"
+          }`}
+        >
+          <MoreHorizontal className="w-6 h-6" />
+          <span className="text-[9px] uppercase tracking-wider font-semibold">
+            More
+          </span>
+        </button>
       </div>
     </>
   );

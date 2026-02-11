@@ -21,7 +21,7 @@ const ContactCard = ({ person }: ContactCardProps) => {
     <div className="group relative w-[240px] bg-zinc-950 border border-zinc-900 overflow-hidden transition-all duration-500 hover:border-white/40">
       
       {/* Profile Image */}
-      <div className="relative w-full aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+      <div className="relative w-full aspect-[4/5] overflow-hidden transition-all duration-700">
         <Image
           src={`/images/${person.imgname}`}
           alt={person.name}
