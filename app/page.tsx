@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEra } from "@/context/EraContext";
-import Loading from "@/components/Loading";
 import AnchorWheel from "@/components/AnchorWheels";
 import BentoGrid from "@/components/BentoGrid";
 import ThemeReveal from "@/components/ThemeReveal";
@@ -49,31 +48,16 @@ const eras = [
 ];
 
 export default function HeroSection() {
-  const { currentEraIndex, setCurrentEraIndex } = useEra();
-  const [showSplash, setShowSplash] = useState(true);
+  const { currentEraIndex } = useEra();
   const [isLocked, setIsLocked] = useState(() => new Date() < TARGET_DATE);
-  /* Splash Screen Logic */
-  useEffect(() => {
-    const hasVisited = sessionStorage.getItem("hasVisitedImpetus");
-    if (hasVisited) {
-      setShowSplash(false);
-    } else {
-      const timer = setTimeout(() => {
-        setShowSplash(false);
-        sessionStorage.setItem("hasVisitedImpetus", "true");
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-
 
   const currentEra = eras[currentEraIndex];
 
   return (
     <main className="w-full bg-black text-white">
       <div className="relative w-full h-screen overflow-hidden">
-        {/* AnimatePresence ensures the exit animation plays when isLocked becomes false */}
+        
+        {/* Reveal Animation */}
         <AnimatePresence>
           {isLocked && (
             <ThemeReveal
@@ -82,6 +66,7 @@ export default function HeroSection() {
             />
           )}
         </AnimatePresence>
+
         {/* Background Gradient */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -98,16 +83,17 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/90" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-        {/* Content */}
+        {/* Content Container */}
         <div className="relative z-10 flex items-center justify-center h-full px-4">
-          {/* Anchor Wheel */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          
+          {/* Anchor Wheel Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="scale-[1.6] opacity-20">
               <AnchorWheel eraIndex={currentEraIndex} />
             </div>
           </div>
 
-          {/* Text */}
+          {/* Main Text Content */}
           <motion.div
             key={currentEra.label}
             initial={{ y: 20, opacity: 0 }}
@@ -142,11 +128,17 @@ export default function HeroSection() {
             >
               {currentEra.subtext}
             </p>
+
+            {/* --- PLACED HERE FOR BETTER VISIBILITY --- */}
+            <div className="mt-4">
+              <AlertBanner />
+            </div>
+
           </motion.div>
         </div>
-        <AlertBanner />
+
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce pointer-events-none">
+        <div className="absolute bottom-20 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce pointer-events-none z-20">
           <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">
             Scroll Down
           </span>
