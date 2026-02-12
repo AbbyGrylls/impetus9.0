@@ -65,7 +65,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 8291164387",
           post: "Lead",
-          imgname: "teamimages/Xyz.png",
+          imgname: "teamimages/Ritesh.jpeg",
           email: "",
           link: "",
         },
@@ -88,7 +88,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 82911 64387",
           post: "Lead",
-          imgname: "teamimages/Xyz.png",
+          imgname: "teamimages/Ritesh.jpeg",
           email: "",
           link: "",
         },
@@ -110,11 +110,11 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Shivansh Kumar",
-          phone: "",
+          phone: "+91 8545898275",
           post: "Lead",
-          imgname: "teamImages/Xyz.png",
-          email: "",
-          link: ""
+          imgname: "teamImages/Shivansh.jpeg",
+          email: "ajaykumar8545898275@gmail.com",
+          link: "https://www.linkedin.com/in/shivansh-kumar-02652b292?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
           name: "Diptayan Mondal ",
@@ -146,7 +146,7 @@ export const teamsData: TeamsData = {
           name: "Rajdeep Sarkar",
           phone: "+91 7980430746",
           post: "Lead",
-          imgname: "teamImages/Xyz.png",
+          imgname: "teamImages/Rajdeep.jpeg",
           email: "2022MEB035.rajdeep@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/rajdeep-sarkar-1403b6257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
@@ -196,7 +196,7 @@ export const teamsData: TeamsData = {
           name: "Durgesh Yadav",
           phone: "+91 95324 51365",
           post: "Executive",
-          imgname: "teamimages/durgeshYadav.jpeg",
+          imgname: "teamimages/durgesh.jpeg",
           email: "durgesh20041@gmail.com",
           link: "https://www.linkedin.com/in/durgesh-yadav-298681289"
 
@@ -205,7 +205,7 @@ export const teamsData: TeamsData = {
           name: "Swayam Gupta",
           phone: "+91 79858 73384",
           post: "Executive",
-          imgname: "teamimages/swayamGupta.jpeg",
+          imgname: "teamimages/swayam.jpeg",
           email: "swayamgupta2764@gmail.com",
           link: "https://www.linkedin.com/in/swayam-gupta-0a4483255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 
@@ -392,7 +392,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 82911 64387",
           post: "Lead",
-          imgname: "teamimages/ritesGupta.jpeg",
+          imgname: "teamimages/Ritesh.jpeg",
           email: "",
           link: "",
         },
