@@ -35,7 +35,7 @@ export const teamsData: TeamsData = {
           name: "Akash S",
           phone: "+91 9444265824",
           post: "Coordinator",
-          imgname: "teamimages/akashS.jpeg",
+          imgname: "teamimages/Xyz.png",
           email: "",
           link: "",
         },
@@ -65,7 +65,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 8291164387",
           post: "Lead",
-          imgname: "teamimages/ritesGupta.jpeg",
+          imgname: "teamimages/Xyz.png",
           email: "",
           link: "",
         },
@@ -88,7 +88,7 @@ export const teamsData: TeamsData = {
           name: "Ritesh Premchand Gupta",
           phone: "+91 82911 64387",
           post: "Lead",
-          imgname: "teamimages/ritesGupta.jpeg",
+          imgname: "teamimages/Xyz.png",
           email: "",
           link: "",
         },
@@ -112,7 +112,7 @@ export const teamsData: TeamsData = {
           name: "Shivansh Kumar",
           phone: "",
           post: "Lead",
-          imgname: "",
+          imgname: "teamImages/Xyz.png",
           email: "",
           link: ""
         },
@@ -129,7 +129,7 @@ export const teamsData: TeamsData = {
           name: "Hariram Murmu",
           phone: "",
           post: "Lead",
-          imgname: "",
+          imgname: "teamImages/Xyz.png",
           email: "",
           link: ""
         },
@@ -144,11 +144,11 @@ export const teamsData: TeamsData = {
 
         {
           name: "Rajdeep Sarkar",
-          phone: "",
+          phone: "+91 7980430746",
           post: "Lead",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Xyz.png",
+          email: "2022MEB035.rajdeep@students.iiests.ac.in",
+          link: "https://www.linkedin.com/in/rajdeep-sarkar-1403b6257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
 
         {
