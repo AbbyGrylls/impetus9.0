@@ -35,7 +35,7 @@ export const teamsData: TeamsData = {
           name: "Akash S",
           phone: "+91 9444265824",
           post: "Coordinator",
-          imgname: "teamimages/Xyz.png",
+          imgname: "teamimages/Akash,jpeg",
           email: "",
           link: "",
         },
