@@ -3,7 +3,6 @@
 import React from "react";
 import { useEra } from "@/context/EraContext";
 import { motion } from "framer-motion";
-import MerchandiseComponent from "@/components/MerchCompo";
 import LifeInALensReg from "@/components/LifeInALensReg";
 
 export default function UpdatesPage() {
@@ -49,8 +48,7 @@ export default function UpdatesPage() {
                 </header>
 
                 <div className="space-y-2">
-                    {/* Component Feed */}
-                    <MerchandiseComponent />
+                    
                     <LifeInALensReg />
 
                     {/* Future placeholder for more updates */}

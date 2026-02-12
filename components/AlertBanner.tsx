@@ -24,7 +24,7 @@ export default function AlertBanner() {
       >
         {/* Main text */}
         <span className="font-medium">
-          Notice: New competitions and deadlines are live
+          Notice: Life in Lens submission link is available in Alerts Page.
         </span>
 
         {/* CTA line (mobile breaks naturally) */}
