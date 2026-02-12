@@ -35,7 +35,7 @@ export const teamsData: TeamsData = {
           name: "Akash S",
           phone: "+91 9444265824",
           post: "Coordinator",
-          imgname: "teamimages/Xyz.png",
+          imgname: "teamimages/Akash.jpeg",
           email: "",
           link: "",
         },
@@ -482,7 +482,7 @@ export const teamsData: TeamsData = {
           link: "linkedin.com/in/amanwankhede2004"
         },
         {
-          name: "Soumyadita Mondal",
+          name: "Soumyaditya Mandal",
           phone: "+91 77977 54924",
           post: "Executive",
           imgname: "teamimages/Soumyadita.jpeg",
