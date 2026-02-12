@@ -141,6 +141,16 @@ export const teamsData: TeamsData = {
           email: "2022meb029.debolina@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/debolina-das-a22715240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
+
+        {
+          name: "Rajdeep Sarkar",
+          phone: "",
+          post: "Lead",
+          imgname: "",
+          email: "",
+          link: ""
+        },
+
         {
           name: "Sreejani Mukherjee",
           phone: "7044442412",
@@ -162,6 +172,8 @@ export const teamsData: TeamsData = {
           name: "Agniva Hazra",
           phone: "9749424075",
           post: "Executive",
+          imgname: "teamimages/Agniva.jpg",
+          email: "hazrasayan007@gmail.com",
           imgname: "teamImages/Agniva.jpg",
           email: "hazrasayan007@gmail.com",
           link: "https://www.linkedin.com/in/agniva-hazra-85b4162a7/"
@@ -170,9 +182,12 @@ export const teamsData: TeamsData = {
           name: "Aman Daulat Wankhede",
           phone: "+91 7448171318",
           post: "Executive",
-          imgname: "teamImages/Aman.jpeg",
+          imgname: "teamimages/amanWankhede.jpeg",
           email: "amanwankhede2004@gmail.com",
           link: "linkedin.com/in/amanwankhede2004"
+          // imgname: "teamImages/Aman.jpeg",
+          // email: "amanwankhede2004@gmail.com",
+          // link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Sachin Yadav",
@@ -184,23 +199,28 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Durgesh Yadav",
-          phone: "+91 95324 51365",
+          phone: "9532451365",
+      
           post: "Executive",
-          imgname: "teamImages/Durgesh.jpeg",
+          imgname: "teamimages/durgeshYadav.jpeg",
           email: "durgesh20041@gmail.com",
           link: "https://www.linkedin.com/in/durgesh-yadav-298681289"
+       
         },
         {
           name: "Swayam Gupta",
-          phone: "+91 79858 73384",
+          phone: "7985873384",
+        
           post: "Executive",
-          imgname: "teamImages/Swayam.jpeg",
+          imgname: "teamimages/swayamGupta.jpeg",
           email: "swayamgupta2764@gmail.com",
           link: "https://www.linkedin.com/in/swayam-gupta-0a4483255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+
         },
         {
           name: "Arti Kumari",
-          phone: "+91 8935810804",
+          phone: "8935810804",
+
           post: "Executive",
           imgname: "teamImages/Arti.jpeg",
           email: "artikumari40503@gmail.com",
@@ -255,7 +275,8 @@ export const teamsData: TeamsData = {
         },
         {
           name: "Mansi Mehra",
-          phone: "+91 93685 50521",
+          phone: "9368550521",
+          // phone: "+91 93685 50521",
           post: "Executive",
           imgname: "teamImages/Mansi.jpeg",
           email: "mansi2004mehra18@gmail.com",
@@ -457,9 +478,9 @@ export const teamsData: TeamsData = {
           name: "Aman Daulat Wankhede",
           phone: "7448171318",
           post: "Executive",
-          imgname: "",
-          email: "",
-          link: ""
+          imgname: "teamImages/Aman.jpeg",
+          email: "amanwankhede2004@gmail.com",
+          link: "linkedin.com/in/amanwankhede2004"
         },
         {
           name: "Soumyadita Mondal",
