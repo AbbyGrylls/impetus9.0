@@ -111,7 +111,7 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <h3 className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mt-2 text-white/70">
+            <h3 className="md:text-[25px] md:text-base font-bold tracking-[0.3em] uppercase mt-2 text-white/70">
               Momentum in Motion
             </h3>
 
