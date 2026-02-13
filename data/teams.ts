@@ -267,7 +267,7 @@ export const teamsData: TeamsData = {
           link: ""
         },
         {
-          name: "Jitendra Kumar",
+          name: "Kanakam Jitendra Kumar",
           phone: "+91 6300651164",
           post: "Executive",
           imgname: "teamimages/Jitendra.jpeg",
