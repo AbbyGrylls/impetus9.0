@@ -258,6 +258,22 @@ export const teamsData: TeamsData = {
           email: "hazrasudeshna7@gmail.com ",
           link: "https://www.linkedin.com/in/sudeshna21"
         },
+        {
+          name: "Swapnanil Mukherjee",
+          phone: "+91 8274852004",
+          post: "Executive",
+          imgname: "teamimages/Swapnil.jpeg",
+          email: "swapnanilmukherjee3@gmail.com",
+          link: ""
+        },
+        {
+          name: "Jitendra Kumar",
+          phone: "+91 6300651164",
+          post: "Executive",
+          imgname: "teamimages/Jitendra.jpeg",
+          email: "jitendrakumar081105@gmail.com",
+          link: ""
+        },
 
       ]
     },
