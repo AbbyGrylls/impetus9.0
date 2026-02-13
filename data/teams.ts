@@ -144,9 +144,9 @@ export const teamsData: TeamsData = {
 
         {
           name: "Rajdeep Sarkar",
-          phone: "+91 7980430746",
+          phone: "+91 79804 30746",
           post: "Lead",
-          imgname: "teamImages/Rajdeep.jpeg",
+          imgname: "teamimages/Rajdeep.jpeg",
           email: "2022MEB035.rajdeep@students.iiests.ac.in",
           link: "https://www.linkedin.com/in/rajdeep-sarkar-1403b6257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
@@ -196,7 +196,7 @@ export const teamsData: TeamsData = {
           name: "Durgesh Yadav",
           phone: "+91 95324 51365",
           post: "Executive",
-          imgname: "teamimages/durgesh.jpeg",
+          imgname: "teamimages/Durgesh.jpeg",
           email: "durgesh20041@gmail.com",
           link: "https://www.linkedin.com/in/durgesh-yadav-298681289"
 
@@ -205,7 +205,7 @@ export const teamsData: TeamsData = {
           name: "Swayam Gupta",
           phone: "+91 79858 73384",
           post: "Executive",
-          imgname: "teamimages/swayam.jpeg",
+          imgname: "teamimages/Swayam.jpeg",
           email: "swayamgupta2764@gmail.com",
           link: "https://www.linkedin.com/in/swayam-gupta-0a4483255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 
@@ -222,7 +222,7 @@ export const teamsData: TeamsData = {
           name: "Mansi Mehra",
           phone: "+91 93685 50521",
           post: "Executive",
-          imgname: "teamimages/Mansi.jpeg",
+          imgname: "teamimages/MansiMehra.jpeg",
           email: "mansi2004mehra18@gmail.com",
           link: "https://www.linkedin.com/in/mansi-mehra-65325738a/"
         },
@@ -293,7 +293,7 @@ export const teamsData: TeamsData = {
           name: "Mansi Mehra",
           phone: "+91 93685 50521",
           post: "Executive",
-          imgname: "teamimages/Mansi.jpeg",
+          imgname: "teamimages/MansiMehra.jpeg",
           email: "mansi2004mehra18@gmail.com",
           link: "https://www.linkedin.com/in/mansi-mehra-65325738a/"
         },
