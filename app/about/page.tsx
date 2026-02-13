@@ -39,7 +39,7 @@ export default function AboutPage() {
         setPropertyValue("absolute");
         setTopValue("45vh");
         setHeightValue("50%");
-        videoRef.current?.play().catch(() => {});
+        videoRef.current?.play().catch(() => { });
       }
     };
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen bg-black text-white">
       {/* <div style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
         <video
           ref={videoRef}

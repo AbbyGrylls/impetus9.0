@@ -1,6 +1,8 @@
 "use client";
 
 import PastSponsors from "./pastSponsors";
+import SponsorsSection from "@/components/SponsorsSection";
+
 
 // Icons
 const IconTrending = () => (
@@ -17,9 +19,38 @@ const IconAward = () => (
 );
 
 export default function SponsorPage() {
+
+  const titleSponsors = [
+    {
+      name: "TEGA",
+      logo: "images/sponsors/Tega.png",
+    },
+  ];
+
+  const coSponsors = [
+    {
+      name: "Mahr",
+      logo: "images/sponsors/logo-mahr.jpg",
+    },
+  ];
+
+  const trainingPartner = [
+    {
+      name: "Gems",
+      logo: "images/sponsors/gems.png",
+    }
+  ];
+  const iamSponsor = [
+    {
+      name: "Lalbaba",
+      logo: "images/sponsors/lalbaba.png",
+    }
+  ];
+
+
   return (
     <main className="relative bg-black text-white font-body min-h-screen selection:bg-impetus-orange selection:text-black">
-      
+
       {/* ================= GLOBAL BACKGROUND (Grain & Gradients) ================= */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Grain Texture across entire page */}
@@ -30,7 +61,7 @@ export default function SponsorPage() {
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 md:px-0 z-10">
-        
+
         <div className="max-w-4xl mx-auto space-y-6 animate-fade-in-up">
           <div className="inline-block border border-white/10 bg-white/5 rounded-full px-4 py-1.5 backdrop-blur-sm mb-2">
             <span className="text-impetus-orange text-xs md:text-sm font-semibold tracking-wider uppercase">
@@ -68,65 +99,107 @@ export default function SponsorPage() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white to-transparent"></div>
         </div>
       </section>
+      {/* ================= CURRENT SPONSORS ================= */}
+      <section className="py-20 relative z-10">
+        <div className="max-w-4xl mx-auto px-6">
 
-      {/* ================= WHY SPONSOR US ================= */}
-      {/* Removed bg-color so the global grain shows through perfectly */}
-      <section className="py-24 border-t border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12 md:text-center max-w-3xl mx-auto">
-            <h2 className="font-roboto text-3xl md:text-4xl font-bold mb-4">Why Partner With Us?</h2>
-            <p className="text-white/60 text-[18px]">
-              Impetus is more than a fest; it's a legacy. Partnering with us places your brand at the heart of technical innovation.
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+            Our Current Sponsors
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
-            <div className="group p-6 bg-white/5 border border-white/10 hover:border-impetus-orange/50 transition-colors duration-300 rounded-lg backdrop-blur-sm">
-              <IconTrending />
-              <h3 className="font-display text-lg text-white mb-2 group-hover:text-impetus-orange transition-colors">Brand Visibility</h3>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Maximum exposure across campus, digital platforms, and main stage branding.
+          <div className="flex flex-col items-center space-y-12">
+
+            {/* Title Sponsor */}
+            <div className="w-[260px] aspect-square bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm flex flex-col items-center justify-between p-6 text-center">
+              <p className="text-xs text-white/40 uppercase tracking-widest">
+                Title Sponsor
+              </p>
+
+              <div className="flex-1 flex items-center justify-center w-full bg-white rounded-lg my-4">
+                <img
+                  src={titleSponsors[0].logo}
+                  alt={titleSponsors[0].name}
+                  className="max-w-[75%] max-h-[75%] object-contain"
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-white">
+                {titleSponsors[0].name}
               </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="group p-6 bg-white/5 border border-white/10 hover:border-impetus-orange/50 transition-colors duration-300 rounded-lg backdrop-blur-sm">
-              <IconTarget />
-              <h3 className="font-display text-lg text-white mb-2 group-hover:text-impetus-orange transition-colors">Targeted Reach</h3>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Direct access to over 3,000+ high-caliber engineering students and researchers.
+            {/* Co Sponsor */}
+            <div className="w-[260px] aspect-square bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm flex flex-col items-center justify-between p-6 text-center">
+              <p className="text-xs text-white/40 uppercase tracking-widest">
+                Co Sponsor
+              </p>
+
+              <div className="flex-1 flex items-center justify-center w-full bg-white rounded-lg my-4">
+                <img
+                  src={coSponsors[0].logo}
+                  alt={coSponsors[0].name}
+                  className="max-w-[75%] max-h-[75%] object-contain"
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-white">
+                {coSponsors[0].name}
               </p>
             </div>
 
-            {/* Card 3 */}
-            <div className="group p-6 bg-white/5 border border-white/10 hover:border-impetus-orange/50 transition-colors duration-300 rounded-lg backdrop-blur-sm">
-              <IconUsers />
-              <h3 className="font-display text-lg text-white mb-2 group-hover:text-impetus-orange transition-colors">Engagement</h3>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Conduct workshops, set up stalls, and interact directly with your future workforce.
+            {/* Training Partner */}
+            <div className="w-[260px] aspect-square bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm flex flex-col items-center justify-between p-6 text-center">
+              <p className="text-xs text-white/40 uppercase tracking-widest">
+                Training Partner
+              </p>
+
+              <div className="flex-1 flex items-center justify-center w-full bg-white rounded-lg my-4">
+                <img
+                  src={trainingPartner[0].logo}
+                  alt={trainingPartner[0].name}
+                  className="max-w-[75%] max-h-[75%] object-contain"
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-white">
+                {trainingPartner[0].name}
               </p>
             </div>
 
-            {/* Card 4 */}
-            <div className="group p-6 bg-white/5 border border-white/10 hover:border-impetus-orange/50 transition-colors duration-300 rounded-lg backdrop-blur-sm">
-              <IconAward />
-              <h3 className="font-display text-lg text-white mb-2 group-hover:text-impetus-orange transition-colors">Long-Term Impact</h3>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Associate your brand with innovation, sustainability, and engineering excellence.
+            {/* IAM Sponsor */}
+            <div className="w-[260px] aspect-square bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm flex flex-col items-center justify-between p-6 text-center">
+              <p className="text-xs text-white/40 uppercase tracking-widest">
+                IAM Sponsor
+              </p>
+
+              <div className="flex-1 flex items-center justify-center w-full bg-white rounded-lg my-4">
+                <img
+                  src={iamSponsor[0].logo}
+                  alt={iamSponsor[0].name}
+                  className="max-w-[75%] max-h-[75%] object-contain"
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-white">
+                {iamSponsor[0].name}
               </p>
             </div>
+
           </div>
         </div>
       </section>
+
+
+
+
 
       {/* ================= SPONSORSHIP TIERS ================= */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-roboto text-3xl md:text-4xl font-bold mb-16 text-center">Sponsorship Tiers</h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-            
+
             {/* Tier 1: Industry Academia (Left) */}
             <div className="bg-neutral-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/30 transition-all order-2 lg:order-1">
               <div className="flex justify-between items-start mb-4">
@@ -144,25 +217,25 @@ export default function SponsorPage() {
             {/* Tier 3: Title Sponsor (Center) - Compacted */}
             <div className="bg-neutral-900 border border-impetus-orange shadow-[0_0_30px_-10px_rgba(234,88,12,0.3)] rounded-xl p-6 transform lg:scale-105 relative order-1 lg:order-2">
               <div className="text-center mb-10">
-                 <span className="text-impetus-orange text-xs font-mono block mb-1">TIER III</span>
-                 <h3 className="font-display text-2xl text-white">Title Sponsor</h3>
-                 <div className="text-2xl font-bold mt-2 text-impetus-orange">₹1.75L</div>
+                <span className="text-impetus-orange text-xs font-mono block mb-1">TIER III</span>
+                <h3 className="font-display text-2xl text-white">Title Sponsor</h3>
+                <div className="text-2xl font-bold mt-2 text-impetus-orange">₹1.75L</div>
               </div>
 
               <p className="text-center text-white/50 text-[10px] uppercase tracking-widest mb-4">Exclusive Benefits</p>
-              
+
               <ul className="text-white/80 text-sm space-y-2.5 mb-2">
                 <li className="flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-impetus-orange"/> Prime branding on all collaterals
+                  <span className="w-1 h-1 rounded-full bg-impetus-orange" /> Prime branding on all collaterals
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-impetus-orange"/> Keynote session opportunity
+                  <span className="w-1 h-1 rounded-full bg-impetus-orange" /> Keynote session opportunity
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-impetus-orange"/> Largest on-ground stall space
+                  <span className="w-1 h-1 rounded-full bg-impetus-orange" /> Largest on-ground stall space
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-impetus-orange"/> Social media dominance
+                  <span className="w-1 h-1 rounded-full bg-impetus-orange" /> Social media dominance
                 </li>
               </ul>
             </div>
@@ -195,7 +268,7 @@ export default function SponsorPage() {
             </div>
             <div className="h-[1px] flex-grow bg-white/10 hidden md:block mx-8 mb-4"></div>
           </div>
-          
+
           <div className="bg-white/5 border border-white/5 rounded-xl p-8">
             <PastSponsors />
           </div>
