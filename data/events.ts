@@ -1,46 +1,46 @@
 // data/events.js
 
 export const eventsData = {
-  preEvents:{
+  preEvents: {
     title: "Pre-Events",
     date: "Feb 10",
     events: [
       {
         title: "BGMI",
         backendValue: "BGMI",
-        coordsValue:"BGMI",
+        coordsValue: "BGMI",
         description: "Play-Finish-Win, a multi round action packed BGMI tournament.",
         src: "/events/bgmiPG.jpg",
         date: "Feb 7",
         time: "02:00 PM",
         color: "#1a1a1a",
-        teamSize: { min: 4, max: 5 }, 
+        teamSize: { min: 4, max: 5 },
         deadline: "2026-02-01T23:59:00",
         ExtFee: 200,
-        prizepool:"2k",
-        coordinators: ["Shiva Kumar (9390480217)","Pranay Dey (7864875402)"],
-        rulebook:"https://docs.google.com/document/d/1203Zxw_HThQ6alSSpbCekO-8H-kpERpx/edit",
+        prizepool: "2k",
+        coordinators: ["Shiva Kumar (9390480217)", "Pranay Dey (7864875402)"],
+        rulebook: "https://docs.google.com/document/d/1203Zxw_HThQ6alSSpbCekO-8H-kpERpx/edit",
       },
       {
         title: "LIFE IN A LENS",
         backendValue: "Photo",
-        coordsValue:"photo",
+        coordsValue: "photo",
         description: "Capture a memory meant for a lifetime and compete with other creative photographers.",
         src: "/events/photoPG.jpg",
         date: "Feb 12",
         time: "02:00 PM",
         color: "#171717",
         ExtFee: 200,
-        prizepool:"1k",
-        teamSize: { min: 1, max: 1 }, 
+        prizepool: "1k",
+        teamSize: { min: 1, max: 1 },
         deadline: "2026-02-14T23:59:00",
-        coordinators: ["Somaditya Mondal (7797754924)","Aman Wankhede (7448171318)"],
-        rulebook:"https://docs.google.com/document/d/1rp2kqOr9_7DYyY1sXmhqtS8eGJG7QenC/edit",
+        coordinators: ["Somaditya Mondal (7797754924)", "Aman Wankhede (7448171318)"],
+        rulebook: "https://docs.google.com/document/d/1rp2kqOr9_7DYyY1sXmhqtS8eGJG7QenC/edit",
       },
       {
         title: "POSTER MAKING",
         backendValue: "Poster",
-        coordsValue:"poster",
+        coordsValue: "poster",
         description: "Create a poster and win, be creative and competetive. With the highest prize pool of pre-events, test your creativity.",
         src: "/events/posterPG.jpg",
         date: "NA",
@@ -49,9 +49,9 @@ export const eventsData = {
         color: "#141414",
         teamSize: { min: 1, max: 1 },
         deadline: "2026-02-14T23:59:00",
-        prizepool:"3k",
-        coordinators:["Ayush Dutta (8972851567)","Anshuman Mondal (9064662805)"],
-        rulebook:"https://docs.google.com/document/d/1N5scOv7tHyPRgMlNn44Q0Ex5e-JkWPZy/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
+        prizepool: "3k",
+        coordinators: ["Ayush Dutta (8972851567)", "Anshuman Mondal (9064662805)"],
+        rulebook: "https://docs.google.com/document/d/1N5scOv7tHyPRgMlNn44Q0Ex5e-JkWPZy/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       }]
   },
   day1: {
@@ -61,55 +61,55 @@ export const eventsData = {
       {
         title: "MECHATHLON",
         backendValue: "Mechanical Triathlon",
-        coordsValue:"MECHANICAL",
+        coordsValue: "MECHANICAL",
         description: "An individual, multi-round mechanical engineering challenge assessing observation, construction, and precision skills. Participants first undergo an eliminatory visual dimension estimation round, followed by a catapult-building task using limited materials, and conclude with an accuracy-based launching test using the same catapult.",
         src: "/events/mechtriPG.jpg",
         date: "NA",
         time: "NA",
         color: "#1a1a1a",
-        teamSize: { min: 2, max: 4 }, 
+        teamSize: { min: 2, max: 4 },
         deadline: "2026-02-14T23:59:00",
         ExtFee: 200,
-        prizepool:"8k",
-        coordinators:["Ayush Dutta (8972851567)","Mansi Mehra (9368550521)"],
-        rulebook:"https://docs.google.com/document/d/1OodHk_IKRBqI3oAwfPnMR2uQHVW8RZoC/edit"
+        prizepool: "8k",
+        coordinators: ["Ayush Dutta (8972851567)", "Mansi Mehra (9368550521)"],
+        rulebook: "https://docs.google.com/document/d/1OodHk_IKRBqI3oAwfPnMR2uQHVW8RZoC/edit"
       },
       {
         title: "CADATHON",
         backendValue: "Cadathon",
-        coordsValue:"CADATHON",
+        coordsValue: "CADATHON",
         description: "CADATHON is a two-round individual design competition that challenges participants to apply Engineering Drawing and 3D CAD skills to create accurate component models and final assemblies based on given problem statements.",
         src: "/events/cadathonPG.jpg",
         date: "NA",
         time: "NA",
         color: "#171717",
-        teamSize: { min: 2, max: 2 }, 
+        teamSize: { min: 2, max: 2 },
         deadline: "2026-02-14T23:59:00",
         ExtFee: 200,
-        prizepool:"8k",
-        coordinators:["Bikram Pal (6296991941)","Agniva Hazra (9749424075)"],
-        rulebook:"https://docs.google.com/document/d/1aHmnu-JOAS416g3PJ3VRwMtuoKK3O69T/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
+        prizepool: "8k",
+        coordinators: ["Bikram Pal (6296991941)", "Agniva Hazra (9749424075)"],
+        rulebook: "https://docs.google.com/document/d/1aHmnu-JOAS416g3PJ3VRwMtuoKK3O69T/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       },
       {
         title: "SCRAPYARD",
         backendValue: "ScrapYard",
-        coordsValue:"SCRAPYARD",
+        coordsValue: "SCRAPYARD",
         description: "Two-round, team-based innovation event that celebrates creativity, problem-solving, and collaborative thinking. In Round 1, teams of up to three members compete in a one-hour aptitude test covering mathematics, physics, GK, logical reasoning, and English, with top teams advancing. Round 2 challenges shortlisted teams to brainstorm and build a functional model or mechanism within two hours using only the scrap materials provided.",
         src: "/events/scrapPG.jpg",
         date: "NA",
         time: "NA",
         color: "#141414",
-        teamSize: { min: 3, max: 5 },
+        teamSize: { min: 3, max: 3 },
         deadline: "2026-02-14T23:59:00",
         ExtFee: 200,
-        prizepool:"8k",
-        coordinators:["Jitendra Kumar (6300651164)","Shubhankar Ghosh (9883080373)"],
-        rulebook:"https://docs.google.com/document/d/1wzVtboklkyMNVV7_50I2p8V1OsUmPtXs/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
+        prizepool: "8k",
+        coordinators: ["Jitendra Kumar (6300651164)", "Shubhankar Ghosh (9883080373)"],
+        rulebook: "https://docs.google.com/document/d/1wzVtboklkyMNVV7_50I2p8V1OsUmPtXs/edit?usp=sharing&ouid=102655943636558845226&rtpof=true&sd=true"
       },
       {
         title: "YANTRASEARCH",
         backendValue: "YantraSearch",
-        coordsValue:"YANTRASEARCH",
+        coordsValue: "YANTRASEARCH",
         description: "YantraSearch is a campus-wide, team-based treasure hunt where participants identify simple machines and mechanisms by solving engineering-themed riddles. Teams of up to three members progress through a single two-hour round, receiving one riddle at a time via WhatsApp, locating the correct object on campus, and submitting photo proof of the required action to advance.",
         src: "/events/yantraPG.jpg",
         date: "NA",
@@ -118,9 +118,9 @@ export const eventsData = {
         ExtFee: 200,
         teamSize: { min: 3, max: 5 },
         deadline: "2026-02-14T23:59:00",
-        prizepool:"8k",
-        coordinators:["Sudheshna Hazra (7583980171)","Avishek Pal (9832061992)"],
-        rulebook:"https://docs.google.com/document/d/1J-iglj7Nrc3UmcpIUt3DQ4GnX88CHFRw/edit#heading=h.6l1oeuz5t97r"
+        prizepool: "8k",
+        coordinators: ["Sudheshna Hazra (7583980171)", "Avishek Pal (9832061992)"],
+        rulebook: "https://docs.google.com/document/d/1J-iglj7Nrc3UmcpIUt3DQ4GnX88CHFRw/edit#heading=h.6l1oeuz5t97r"
       }
     ]
   },
@@ -131,7 +131,7 @@ export const eventsData = {
       {
         title: "VALORANT",
         backendValue: "Valorant",
-        coordsValue:"VALORANT",
+        coordsValue: "VALORANT",
         description: "In official collaboration with Valorant South Asia, presents a high-stakes campus Valorant tournament at IIEST Shibpur, bringing together competitive teams to showcase skill, strategy, and teamwork. The three-round knockout format (eliminations, semifinals, and finals) is played on the Mumbai server via Discord and Valorant, with strict competitive rules, timed matches, and admin decisions being final.",
         src: "/events/valoPG.jpg",
         date: "NA",
@@ -140,14 +140,14 @@ export const eventsData = {
         teamSize: { min: 5, max: 5 },
         deadline: "2026-02-14T23:59:00",
         ExtFee: 300,
-        prizepool:"10k",
-        coordinators:["Shiva Kumar (9390480217)","Aman Wankhede (7448171318)"],
-        rulebook:"https://docs.google.com/document/d/1RTxp3ur6SOXH-x23uiAoalO2ZzmpdpzF/edit?rtpof=true"
+        prizepool: "10k",
+        coordinators: ["Shiva Kumar (9390480217)", "Aman Wankhede (7448171318)"],
+        rulebook: "https://docs.google.com/document/d/1RTxp3ur6SOXH-x23uiAoalO2ZzmpdpzF/edit?rtpof=true"
       },
       {
         title: "IQ IGNITION",
         backendValue: "IQ Ignition",
-        coordsValue:"IQIGNITION",
+        coordsValue: "IQIGNITION",
         description: "IQ Ignition is a two-round, high-intensity quiz competition that tests participants’ knowledge, intelligence, and quick thinking across technical and general domains. Open to teams of up to three members, the event features a preliminary written round followed by an interactive final round, rewarding sharp reasoning, speed, and accuracy with attractive prizes..",
         src: "/events/iqPG.jpg",
         date: "Feb 14",
@@ -156,14 +156,14 @@ export const eventsData = {
         teamSize: { min: 2, max: 3 },
         ExtFee: 200,
         deadline: "2026-02-14T23:59:00",
-        prizepool:"8k",
-        coordinators:["Pranay Dey (7864875402)","Ayush Dutta (8972851567)"],
-        rulebook:"https://docs.google.com/document/d/12RHMaaITQwxB21wDuYBsosyZKaWUFxHT/edit?rtpof=true&tab=t.0"
+        prizepool: "8k",
+        coordinators: ["Pranay Dey (7864875402)", "Ayush Dutta (8972851567)"],
+        rulebook: "https://docs.google.com/document/d/12RHMaaITQwxB21wDuYBsosyZKaWUFxHT/edit?rtpof=true&tab=t.0"
       },
       {
         title: "DEATHRACE",
         backendValue: "Death Race",
-        coordsValue:"DEATHRACE",
+        coordsValue: "DEATHRACE",
         description: "A high-speed robotics competition where teams design and manually control a resilient robot to navigate an obstacle-filled track in the shortest time with minimum penalties. Teams of up to four members compete under strict bot specifications and gameplay rules across two rounds—a time-based elimination followed by a 1-vs-1 final showdown. ",
         src: "/events/deathracePG.jpg",
         date: "NA",
@@ -172,14 +172,14 @@ export const eventsData = {
         teamSize: { min: 2, max: 4 },
         deadline: "2026-02-14T23:59:00",
         ExtFee: 200,
-        prizepool:"10k",
-        coordinators:["Rohan Vikas Kudturkar (9321234034)","Swayam Gupta (7985873384) "],
-        rulebook:"https://docs.google.com/document/d/1vnuBAW8poSmPbbzMvjV2009DwGr8WrN_/edit?rtpof=true"
+        prizepool: "10k",
+        coordinators: ["Rohan Vikas Kudturkar (9321234034)", "Swayam Gupta (7985873384) "],
+        rulebook: "https://docs.google.com/document/d/1vnuBAW8poSmPbbzMvjV2009DwGr8WrN_/edit?rtpof=true"
       },
       {
         title: "DRONE PURSUIT",
         backendValue: "Drone Pursuit",
-        coordsValue:"DRONEPURSUIT",
+        coordsValue: "DRONEPURSUIT",
         description: "Drone Pursuit is a competitive FPV drone racing event that tests pilots’ speed, precision, reaction time, and control on a gate- and obstacle-filled track. Pilots progress through Qualifiers, Semi Finals, and a Final “Chase the Ace” round based on lap times and race performance, under strict judging and timing systems. The event enforces detailed safety, equipment, and race rules to ensure fair competition and safe operations throughout.",
         src: "/events/dronepurPG.jpg",
         date: "NA",
@@ -188,9 +188,9 @@ export const eventsData = {
         ExtFee: 0,
         teamSize: { min: 1, max: 2 },
         deadline: "2026-02-14T23:59:00",
-        prizepool:"40k",
-        coordinators:["Ayush Dutta (8972851567)","Bontha Likhith (8074677491)"],
-        rulebook:"https://docs.google.com/document/d/1Z3CeUfFkVz5dsk4oRuMcPg8mlkFmjOou/edit?rtpof=true"
+        prizepool: "40k",
+        coordinators: ["Ayush Dutta (8972851567)", "Bontha Likhith (8074677491)"],
+        rulebook: "https://docs.google.com/document/d/1Z3CeUfFkVz5dsk4oRuMcPg8mlkFmjOou/edit?rtpof=true"
       },
       /* {
         title: "CONTROL CRAFT",
